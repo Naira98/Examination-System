@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer type="module" src="/src/services/register.js"></script>
+    <title>Register</title>
+    <style>
+      #togglePassword {
+        margin-left: -30px;
+        &:focus {
+          outline: none;
+        }
+        /* focus:outline-none -ml-8 */
+      }
+    </style>
+  </head>
+  <body>
+    <form method="POST">
+      <h1 class="">Register</h1>
+
+      <div>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" />
+        <span class="errorMessage" id="firstNameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" />
+        <span class="errorMessage" id="lastNameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" />
+        <span class="errorMessage" id="emailError"></span>
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <div>
+          <input type="password" id="password" name="password" />
+          <button
+            type="button"
+            id="togglePassword"
+            class="focus:outline-none -ml-8"
+          >
+            <i class="fa-regular fa-eye"></i>
+            <!-- <i class="fa-regular fa-eye-slash"></i>  -->
+          </button>
+        </div>
+        <span class="errorMessage" id="passwordError"></span>
+      </div>
+
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <div>
+          <input type="password" id="confirmPassword" name="confirmPassword" />
+          <button
+            type="button"
+            id="toggleConfirmPassword"
+            data-for="confirmPassword"
+          >
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+        <span class="errorMessage" id="confirmPasswordError"></span>
+      </div>
+
+      <button type="submit">Register</button>
+
+      <div class="auth-links">
+        <p>Already have an account? <a href="#/login.html">Login</a></p>
+      </div>
+    </form>
+  </body>
+</html>
