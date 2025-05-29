@@ -10,7 +10,7 @@
     --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-brand: #bcdea5;
+    --color-text: #000000;
   }
 }
 @layer base {
@@ -165,12 +165,6 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
-  .bg-brand {
-    background-color: var(--color-brand);
-  }
-  .text-brand {
-    color: var(--color-brand);
-  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
@@ -183,6 +177,11 @@
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
+    }
+  }
+  .dark\:bg-text {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-text);
     }
   }
 }
