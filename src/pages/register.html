@@ -10,74 +10,118 @@
     <link href="/src/styles/output.css" rel="stylesheet" />
     <script defer type="module" src="/src/services/register.js"></script>
     <title>Register</title>
-    <!-- <style>
-      #togglePassword {
-        margin-left: -30px;
-        &:focus {
-          outline: none;
-        }
-        /* focus:outline-none -ml-8 */
-      }
-    </style> -->
   </head>
   <body>
-    <form method="POST">
-      <h1 class="">Register</h1>
+    <div class="bg-background h-screen flex justify-center items-center">
+      <form
+        method="POST"
+        class="flex flex-col justify-center items-center p-6 border-1 rounded-2xl border-primary gap-5"
+      >
+        <h1 class="text-brand text-2xl font-bold">Register</h1>
 
-      <div>
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" />
-        <span class="errorMessage" id="firstNameError"></span>
-      </div>
+        <div class="flex justify-center items-center gap-[15px]">
+          <div class="flex flex-col w-[140px]">
+            <input
+              class="input"
+              type="text"
+              id="firstName"
+              placeholder="First Name"
+              name="firstName"
+            />
+            <span
+              class="errorMessage text-red-400 text-sm"
+              id="firstNameError"
+            ></span>
+          </div>
 
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" />
-        <span class="errorMessage" id="lastNameError"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" />
-        <span class="errorMessage" id="emailError"></span>
-      </div>
-
-      <div>
-        <label for="password">Password</label>
-        <div>
-          <input type="password" id="password" name="password" />
-          <button
-            type="button"
-            id="togglePassword"
-            class="focus:outline-none -ml-8"
-          >
-            <i class="fa-regular fa-eye"></i>
-            <!-- <i class="fa-regular fa-eye-slash"></i>  -->
-          </button>
+          <div class="flex flex-col w-[140px]">
+            <input
+              class="input"
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Last Name"
+            />
+            <span class="errorMessage" id="lastNameError"></span>
+          </div>
         </div>
-        <span class="errorMessage" id="passwordError"></span>
-      </div>
 
-      <div>
-        <label for="confirmPassword">Confirm Password</label>
-        <div>
-          <input type="password" id="confirmPassword" name="confirmPassword" />
-          <button
-            type="button"
-            id="toggleConfirmPassword"
-            data-for="confirmPassword"
-          >
-            <i class="fa-regular fa-eye"></i>
-          </button>
+        <div class="flex flex-col w-[295px]">
+          <input
+            class="input"
+            type="email"
+            id="email"
+            placeholder="Email"
+            name="email"
+          />
+          <span
+            class="errorMessage text-red-400 text-sm"
+            id="emailError"
+          ></span>
         </div>
-        <span class="errorMessage" id="confirmPasswordError"></span>
-      </div>
 
-      <button type="submit">Register</button>
+        <div class="flex flex-col">
+          <div>
+            <input
+              class="input relative w-[295px]"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+            <button
+              type="button"
+              id="togglePassword"
+              class="absolute focus:outline-none -ml-6"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
 
-      <div class="auth-links">
-        <p>Already have an account? <a href="#/login.html">Login</a></p>
-      </div>
-    </form>
+          <span
+            class="errorMessage text-red-400 text-sm"
+            id="passwordError"
+          ></span>
+        </div>
+
+        <div class="flex flex-col">
+          <div>
+            <input
+              class="input relative w-[295px]"
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+            />
+            <button
+              type="button"
+              id="toggleConfirmPassword"
+              class="absolute focus:outline-none -ml-6"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+
+          <span
+            class="errorMessage text-red-400 text-sm"
+            id="confirmPasswordError"
+          ></span>
+        </div>
+
+        <button
+          class="bg-brand text-background py-2 w-full block rounded-lg text-xl"
+          type="submit"
+        >
+          Register
+        </button>
+
+        <div class="auth-links">
+          <p>
+            Already have an account?
+            <a class="text-brand underline" href="#/login.html">Login</a>
+          </p>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

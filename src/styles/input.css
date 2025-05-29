@@ -11,5 +11,10 @@
   --color-secondary: #574951;
 
   --color-text: #000000;
-  --color-background: #ffffff;
+  --color-background: #faf9f7;
 }
+
+@layer components;
+  .input {
+    @apply border-b-1 focus:outline-none focus:border-brand
+  }
