@@ -1,4 +1,6 @@
-export async function generateHash(data, algorithm = "SHA-256") {
+const algorithm = "SHA-256";
+
+export async function generateHash(data) {
   const encodedData = new TextEncoder().encode(data);
   const hashBuffer = await crypto.subtle.digest(algorithm, encodedData);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
@@ -8,11 +10,7 @@ export async function generateHash(data, algorithm = "SHA-256") {
   return hashHex;
 }
 
-export async function compareHashes(
-  data,
-  hashToCompare,
-  algorithm = "SHA-256"
-) {
+export async function compareHashes(data, hashToCompare) {
   const generatedHash = await generateHash(data, algorithm);
   return generatedHash === hashToCompare;
 }

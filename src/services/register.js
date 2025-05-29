@@ -6,7 +6,6 @@ import {
 } from "../utils/validation.js";
 import { generateHash } from "../utils/hashing.js";
 
-// #region DOM Selection
 const form = document.querySelector("form");
 const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
@@ -22,7 +21,6 @@ const confirmPasswordError = document.querySelector("#confirmPasswordError");
 
 const showPassword = document.querySelector("#togglePassword");
 const showConfirmPassword = document.querySelector("#toggleConfirmPassword");
-// #endregion
 
 const fields = [
   {
@@ -97,6 +95,7 @@ form.addEventListener("submit", async (e) => {
       password: hashedPassword,
     };
 
+    // CHECK IF USER ALREADY EXISTS
     // TODO: STORE USER
 
     window.location.replace("/src/pages/login.html");
