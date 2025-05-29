@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam</title>
+    <link rel="stylesheet" href="/src/styles/output.css" />
+    <script defer type="module" src="/src/services/exam.js"></script>
+  </head>
+  <body>
+    <div
+      class="flex items-center justify-center w-full gap-1.5 count-down-main"
+    >
+      <div>
+        <div
+          class="rounded-xl border border-brand py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+        >
+          <h3
+            class="countdown-element minutes font-manrope font-semibold text-2xl text-brand text-center"
+          ></h3>
+          <p
+            class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
+          >
+            Minutes
+          </p>
+        </div>
+      </div>
+      <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+      <div>
+        <div
+          class="rounded-xl border border-brand py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+        >
+          <h3
+            class="countdown-element seconds sec font-manrope font-semibold text-2xl text-brand text-center"
+          ></h3>
+          <p
+            class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
+          >
+            Seconds
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
