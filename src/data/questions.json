@@ -1,0 +1,134 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "text": "What is JavaScript?",
+      "answers": [
+        {
+          "id": "q1_a1",
+          "text": "A programming language for creating interactive web pages",
+          "isCorrect": true
+        },
+        {
+          "id": "q1_a2",
+          "text": "A markup language for structuring web content",
+          "isCorrect": false
+        },
+        {
+          "id": "q1_a3",
+          "text": "A styling language for designing web pages",
+          "isCorrect": false
+        },
+        {
+          "id": "q1_a4",
+          "text": "A database management system",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Which HTML tag is used to create a hyperlink?",
+      "answers": [
+        {
+          "id": "q2_a1",
+          "text": "<link>",
+          "isCorrect": false
+        },
+        {
+          "id": "q2_a2",
+          "text": "<a>",
+          "isCorrect": true
+        },
+        {
+          "id": "q2_a3",
+          "text": "<href>",
+          "isCorrect": false
+        },
+        {
+          "id": "q2_a4",
+          "text": "<url>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "What does CSS stand for?",
+      "answers": [
+        {
+          "id": "q3_a1",
+          "text": "Computer Style Sheets",
+          "isCorrect": false
+        },
+        {
+          "id": "q3_a2",
+          "text": "Creative Style System",
+          "isCorrect": false
+        },
+        {
+          "id": "q3_a3",
+          "text": "Cascading Style Sheets",
+          "isCorrect": true
+        },
+        {
+          "id": "q3_a4",
+          "text": "Colorful Style Sheets",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Which method is used to add an element at the end of an array in JavaScript?",
+      "answers": [
+        {
+          "id": "q4_a1",
+          "text": "push()",
+          "isCorrect": true
+        },
+        {
+          "id": "q4_a2",
+          "text": "unshift()",
+          "isCorrect": false
+        },
+        {
+          "id": "q4_a3",
+          "text": "append()",
+          "isCorrect": false
+        },
+        {
+          "id": "q4_a4",
+          "text": "add()",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "What is the correct way to write a comment in JavaScript?",
+      "answers": [
+        {
+          "id": "q5_a1",
+          "text": "<!-- This is a comment -->",
+          "isCorrect": false
+        },
+        {
+          "id": "q5_a2",
+          "text": "/* This is a comment */",
+          "isCorrect": true
+        },
+        {
+          "id": "q5_a3",
+          "text": "# This is a comment",
+          "isCorrect": false
+        },
+        {
+          "id": "q5_a4",
+          "text": "// This is a comment",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
