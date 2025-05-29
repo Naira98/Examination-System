@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #bcdea5;
+  --color-brand-light: #bcdea5;
+  --color-brand-dark: #bcdea5;
+
+  --color-primary: #83988e;
+  --color-secondary: #574951;
+
+  --color-text: #000000;
+  --color-background: #f8faf7;
+}
+
+@layer components;
+  .input {
+    @apply border-b-1 focus:outline-none focus:border-brand
+  }
