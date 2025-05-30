@@ -7,8 +7,10 @@
   --color-brand-light: #bcdea5;
   --color-brand-dark: #bcdea5;
 
-  --color-primary: #83988e;
-  --color-secondary: #574951;
+  --color-primary: #99a1af;
+  --color-secondary: #6a7282;
+
+  --color-error: #fc0000;
 
   --color-text: #000000;
   --color-background: #f8faf7;
@@ -23,11 +25,15 @@
   @apply text-brand text-2xl text-center font-bold;
 }
 .input {
-  @apply border-b-1 focus:outline-none focus:border-brand;
+  @apply border-b-1 border-primary focus:outline-none focus:border-brand;
+}
+
+.eyeBtn {
+  @apply absolute focus:outline-none right-2 cursor-pointer text-secondary;
 }
 
 .errorMessage {
-  @apply text-red-400 text-xs min-h-4 font-semibold;
+  @apply text-error text-xs min-h-4 font-semibold;
 }
 
 .btn {
