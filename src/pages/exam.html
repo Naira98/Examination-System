@@ -8,37 +8,30 @@
     <script defer type="module" src="/src/services/exam.js"></script>
   </head>
   <body>
+    <div class="progressBar w-[132px] aspect-square bg-blue-500 rounded-full"></div>
     <div
       class="flex items-center justify-center w-full gap-1.5 count-down-main"
     >
       <div>
-        <div
-          class="rounded-xl border border-brand py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+        <h3
+          class="countdown-element minutes font-manrope font-semibold text-2xl text-brand text-center"
+        ></h3>
+        <p
+          class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
         >
-          <h3
-            class="countdown-element minutes font-manrope font-semibold text-2xl text-brand text-center"
-          ></h3>
-          <p
-            class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
-          >
-            Minutes
-          </p>
-        </div>
+          Minutes
+        </p>
       </div>
-      <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+      <h3 class="font-manrope font-semibold text-2xl text-brand">:</h3>
       <div>
-        <div
-          class="rounded-xl border border-brand py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+        <h3
+          class="countdown-element seconds sec font-manrope font-semibold text-2xl text-brand text-center"
+        ></h3>
+        <p
+          class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
         >
-          <h3
-            class="countdown-element seconds sec font-manrope font-semibold text-2xl text-brand text-center"
-          ></h3>
-          <p
-            class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
-          >
-            Seconds
-          </p>
-        </div>
+          Seconds
+        </p>
       </div>
     </div>
   </body>
