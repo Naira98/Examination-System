@@ -5,6 +5,7 @@ import {
   validatePasswordsMatch,
 } from "../utils/validation.js";
 import { generateHash } from "../utils/hashing.js";
+import { showHidePassword } from "../utils/showHidePassword.js";
 
 const form = document.querySelector("form");
 const firstName = document.querySelector("#firstName");
@@ -63,19 +64,7 @@ const icons = [
   },
 ];
 
-for (const { button, icon, input } of icons) {
-  button.addEventListener("click", () => {
-    if (input.getAttribute("type") == "password") {
-      input.setAttribute("type", "text");
-      icon.classList.remove("fa-eye");
-      icon.classList.add("fa-eye-slash");
-    } else {
-      input.setAttribute("type", "password");
-      icon.classList.remove("fa-eye-slash");
-      icon.classList.add("fa-eye");
-    }
-  });
-}
+showHidePassword(icons);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -95,8 +84,7 @@ form.addEventListener("submit", async (e) => {
       password: hashedPassword,
     };
 
-    // CHECK IF USER ALREADY EXISTS
-    // TODO: STORE USER
+    localStorage.setItem("registeredUser", JSON.stringify(user));
 
     window.location.replace("/src/pages/login.html");
   }

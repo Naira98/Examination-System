@@ -13,114 +13,73 @@
   </head>
   <body>
     <div class="bg-background min-h-screen flex justify-center items-center">
-      <form
-        method="POST"
-        class="flex flex-col justify-center items-center p-6 border-1 rounded-2xl border-primary gap-5 bg-white shadow-xl"
-      >
-        <h1 class="text-brand text-2xl font-bold">Register</h1>
+      <form method="POST" class="form">
+        <h1 class="title mb-5 col-span-2">Create an account</h1>
 
-        <div class="flex justify-center items-center gap-[15px]">
-          <div class="flex flex-col w-[140px]">
-            <input
-              class="input"
-              type="text"
-              id="firstName"
-              placeholder="First Name"
-              name="firstName"
-            />
-            <span
-              class="errorMessage text-red-400 text-sm"
-              id="firstNameError"
-            ></span>
-          </div>
-
-          <div class="flex flex-col w-[140px]">
-            <input
-              class="input"
-              type="text"
-              id="lastName"
-              name="lastName"
-              placeholder="Last Name"
-            />
-            <span class="errorMessage" id="lastNameError"></span>
-          </div>
+        <div class="row-span-2 grid grid-rows-subgrid">
+          <input
+            class="input"
+            type="text"
+            id="firstName"
+            placeholder="First Name"
+            name="firstName"
+          />
+          <span class="errorMessage" id="firstNameError"></span>
         </div>
 
-        <div class="flex flex-col w-[295px]">
+        <div class="row-span-2 grid grid-rows-subgrid">
+          <input
+            class="input"
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Last Name"
+          />
+          <span class="errorMessage" id="lastNameError"></span>
+        </div>
+
+        <div class="row-span-2 col-span-2 grid grid-rows-subgrid">
           <input
             class="input"
             type="email"
             id="email"
-            placeholder="Email"
+            placeholder="Email Address"
             name="email"
           />
-          <span
-            class="errorMessage text-red-400 text-sm"
-            id="emailError"
-          ></span>
+          <span class="errorMessage" id="emailError"></span>
         </div>
 
-        <div class="flex flex-col">
-          <div>
-            <input
-              class="input relative w-[295px]"
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-            />
-            <button
-              type="button"
-              id="togglePassword"
-              class="absolute focus:outline-none -ml-6"
-            >
-              <i class="fa-regular fa-eye"></i>
-            </button>
-          </div>
+        <div class="relative row-span-2 col-span-2 grid grid-rows-subgrid">
+          <input
+            class="input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <button type="button" id="togglePassword" class="eyeBtn">
+            <i class="fa-regular fa-eye"></i>
+          </button>
 
-          <span
-            class="errorMessage text-red-400 text-sm"
-            id="passwordError"
-          ></span>
+          <span class="errorMessage" id="passwordError"></span>
         </div>
 
-        <div class="flex flex-col">
-          <div>
-            <input
-              class="input relative w-[295px]"
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-            />
-            <button
-              type="button"
-              id="toggleConfirmPassword"
-              class="absolute focus:outline-none -ml-6"
-            >
-              <i class="fa-regular fa-eye"></i>
-            </button>
-          </div>
+        <div class="relative row-span-2 col-span-2 grid grid-rows-subgrid">
+          <input
+            class="input"
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+          />
+          <button type="button" id="toggleConfirmPassword" class="eyeBtn">
+            <i class="fa-regular fa-eye"></i>
+          </button>
 
-          <span
-            class="errorMessage text-red-400 text-sm"
-            id="confirmPasswordError"
-          ></span>
+          <span class="errorMessage" id="confirmPasswordError"></span>
         </div>
 
-        <button
-          class="bg-brand text-background py-2 w-full block rounded-lg text-xl"
-          type="submit"
-        >
-          Register
-        </button>
-
-        <div class="auth-links">
-          <p>
-            Already have an account?
-            <a class="text-brand underline" href="#/login.html">Login</a>
-          </p>
-        </div>
+        <button class="btn col-span-2 mt-4" type="submit">Register</button>
       </form>
     </div>
   </body>
