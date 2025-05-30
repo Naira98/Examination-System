@@ -16,11 +16,11 @@
 
 @layer components;
 .form {
-  @apply grid grid-cols-2 p-6 pb-10 border-1 rounded-2xl border-primary gap-3 bg-white shadow-xl
+  @apply grid grid-cols-2 p-6 pb-10 border-1 rounded-2xl border-primary gap-3 bg-white shadow-xl min-w-[430px] min-h-[300px];
 }
 
 .title {
-  @apply text-brand text-2xl text-center font-bold
+  @apply text-brand text-2xl text-center font-bold;
 }
 .input {
   @apply border-b-1 focus:outline-none focus:border-brand;

@@ -14,7 +14,7 @@
   <body>
     <div class="bg-background min-h-screen flex justify-center items-center">
       <form method="POST" class="form">
-        <h1 class="title mb-4 col-span-2">Register</h1>
+        <h1 class="title mb-5 col-span-2">Create an account</h1>
 
         <div class="row-span-2 grid grid-rows-subgrid">
           <input
@@ -43,7 +43,7 @@
             class="input"
             type="email"
             id="email"
-            placeholder="Email"
+            placeholder="Email Address"
             name="email"
           />
           <span class="errorMessage" id="emailError"></span>
@@ -60,7 +60,7 @@
           <button
             type="button"
             id="togglePassword"
-            class="absolute focus:outline-none right-2"
+            class="absolute focus:outline-none right-2 cursor-pointer"
           >
             <i class="fa-regular fa-eye"></i>
           </button>
@@ -79,7 +79,7 @@
           <button
             type="button"
             id="toggleConfirmPassword"
-            class="absolute focus:outline-none right-2"
+            class="absolute focus:outline-none right-2 cursor-pointer"
           >
             <i class="fa-regular fa-eye"></i>
           </button>
@@ -87,7 +87,7 @@
           <span class="errorMessage" id="confirmPasswordError"></span>
         </div>
 
-        <button class="btn col-span-2" type="submit">Register</button>
+        <button class="btn col-span-2 mt-4" type="submit">Register</button>
       </form>
     </div>
   </body>
