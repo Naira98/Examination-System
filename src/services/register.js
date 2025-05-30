@@ -64,7 +64,8 @@ const icons = [
 ];
 
 for (const { button, icon, input } of icons) {
-  button.addEventListener("click", () => {
+  button.addEventListener("mousedown", (e) => {
+    e.preventDefault();
     if (input.getAttribute("type") == "password") {
       input.setAttribute("type", "text");
       icon.classList.remove("fa-eye");
@@ -95,8 +96,7 @@ form.addEventListener("submit", async (e) => {
       password: hashedPassword,
     };
 
-    // CHECK IF USER ALREADY EXISTS
-    // TODO: STORE USER
+    localStorage.setItem("registerUser", user);
 
     window.location.replace("/src/pages/login.html");
   }
