@@ -23,7 +23,7 @@ export function vaildateEmail(email, errorMessage) {
 
 export function validatePassword(password, errorMessage) {
   errorMessage.innerText = "";
-
+  console.log(password.value.length);
   if (password.value.length < 8) {
     errorMessage.innerText = "Password must have at least 8 characters.";
     return false;
@@ -39,8 +39,7 @@ export function validatePasswordsMatch(
   errorMessage.innerText = "";
 
   if (firstPassword.value !== secondPassword.value) {
-    errorMessage.innerText =
-      "Passwords must match.";
+    errorMessage.innerText = "Passwords must match.";
     return false;
   }
   return true;

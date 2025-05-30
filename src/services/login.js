@@ -1,41 +1,46 @@
-document.addEventListener("DOMContentLoaded", () =>
-{
-    const form = document.getElementById("loginForm");
-    const message = document.getElementById("message");
+import { compareHashes } from "../utils/hashing.js";
+import { showHidePassword } from "../utils/showHidePassword.js";
+import { vaildateEmail, validatePassword } from "../utils/validation.js";
 
-    form.addEventListener("submit", (e) =>
-    {
-        e.preventDefault();
+const form = document.querySelector("form");
+const email = document.getElementById("email");
+const password = document.querySelector("#password");
+const showPassword = document.querySelector("#togglePassword");
+const emailError = document.querySelector("#emailError");
+const passwordError = document.querySelector("#passwordError");
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
+showHidePassword([
+  { button: showPassword, icon: showPassword.children[0], input: password },
+]);
 
-        // Simulated saved user (from registration)
-        const isRegistered = localStorage.getItem("registered") === "true";
-        const savedEmail = localStorage.getItem("email");
-        const savedPassword = localStorage.getItem("password");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-        if (!isRegistered)
-        {
-            message.innerHTML = `You are not registered. <br>
-               <a href="../../index.html">Go to Registration Page</a>`;
+  let isDataValid =
+    vaildateEmail(email, emailError) &&
+    validatePassword(password, passwordError);
 
-            return;
-        }
+  console.log({ isDataValid });
+  if (isDataValid) {
+    const registeredUser = JSON.parse(localStorage.getItem("registeredUser"));
 
-        if (email !== savedEmail || password !== savedPassword)
-        {
-            message.textContent = "Invalid email or password.";
-            return;
-        }
+    if (
+      email.value == registeredUser.email &&
+      compareHashes(password.value, registeredUser.password)
+    ) {
+      window.location.replace("/src/pages/exam.html");
+      return;
+    } else {
+      passwordError.innerText = "Invalid email or password.";
+    }
+  }
 
-        message.style.color = "green";
-        message.textContent = "Login successful!";
+  //   message.style.color = "green";
+  //   message.textContent = "Login successful!";
 
-        // Optional redirect simulation
-        setTimeout(() =>
-        {
-            document.body.innerHTML = "<h2 style='text-align:center;'>Welcome to the Exam Dashboard!</h2>";
-        }, 1000);
-    });
+  //   // Optional redirect simulation
+  //   setTimeout(() => {
+  //     document.body.innerHTML =
+  //       "<h2 style='text-align:center;'>Welcome to the Exam Dashboard!</h2>";
+  //   }, 1000);
 });
