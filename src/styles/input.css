@@ -15,6 +15,21 @@
 }
 
 @layer components;
-  .input {
-    @apply border-b-1 focus:outline-none focus:border-brand
-  }
+.form {
+  @apply grid grid-cols-2 p-6 pb-10 border-1 rounded-2xl border-primary gap-3 bg-white shadow-xl
+}
+
+.title {
+  @apply text-brand text-2xl text-center font-bold
+}
+.input {
+  @apply border-b-1 focus:outline-none focus:border-brand;
+}
+
+.errorMessage {
+  @apply text-red-400 text-xs min-h-4 font-semibold;
+}
+
+.btn {
+  @apply bg-brand cursor-pointer text-background font-semibold py-2 block rounded-lg text-xl hover:bg-brand-light transform transition hover:-translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-brand active:bg-brand-dark;
+}

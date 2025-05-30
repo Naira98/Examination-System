@@ -5,7 +5,7 @@ export function validateName(name, errorMessage) {
   errorMessage.innerText = "";
 
   if (!nameRegex.test(name.value)) {
-    errorMessage.innerText = "Name must contain letters only (A-Z or a-z).";
+    errorMessage.innerText = "Letters only (A-Z or a-z).";
     return false;
   }
   return true;
@@ -15,7 +15,7 @@ export function vaildateEmail(email, errorMessage) {
   errorMessage.innerText = "";
 
   if (!emailRegex.test(email.value)) {
-    errorMessage.innerText = "Please enter a valid email.";
+    errorMessage.innerText = "Email is not valid.";
     return false;
   }
   return true;
@@ -40,7 +40,7 @@ export function validatePasswordsMatch(
 
   if (firstPassword.value !== secondPassword.value) {
     errorMessage.innerText =
-      "Confirm password must match the original password.";
+      "Passwords must match.";
     return false;
   }
   return true;
