@@ -8,31 +8,23 @@
     <script defer type="module" src="/src/services/exam.js"></script>
   </head>
   <body>
-    <div class="progressBar w-[132px] aspect-square bg-blue-500 rounded-full"></div>
-    <div
-      class="flex items-center justify-center w-full gap-1.5 count-down-main"
-    >
-      <div>
-        <h3
-          class="countdown-element minutes font-manrope font-semibold text-2xl text-brand text-center"
-        ></h3>
-        <p
-          class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
-        >
-          Minutes
-        </p>
-      </div>
-      <h3 class="font-manrope font-semibold text-2xl text-brand">:</h3>
-      <div>
-        <h3
-          class="countdown-element seconds sec font-manrope font-semibold text-2xl text-brand text-center"
-        ></h3>
-        <p
-          class="text-sm font-inter capitalize font-normal text-brand text-center w-full"
-        >
-          Seconds
-        </p>
+    <div class="timer" style="--angle: 360deg">
+      <div
+        class="absolute inset-0 flex items-center justify-center w-full gap-1"
+      >
+        <div>
+          <h3
+            class="minutes font-semibold text-2xl text-brand text-center"
+          ></h3>
+        </div>
+        <h3 class="font-semibold text-2xl text-brand">:</h3>
+        <div>
+          <h3
+            class="seconds font-semibold text-2xl text-brand text-center"
+          ></h3>
+        </div>
       </div>
     </div>
+    <div></div>
   </body>
 </html>
