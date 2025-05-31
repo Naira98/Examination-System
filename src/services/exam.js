@@ -21,14 +21,21 @@ question.innerText = questions[currentQuestionIndex].question;
 
 for (let answerIndex in questions[currentQuestionIndex].answers) {
   let div = document.createElement("div");
+
   div.classList.add("answer");
+  if (answersMap.get(currentQuestionIndex)) {
+    div.classList.add("activeAnswer");
+  }
+
   div.textContent = questions[currentQuestionIndex].answers[answerIndex].text;
-  choices.append(div);
 
   div.addEventListener("click", () => {
     const activeAnswers = document.querySelectorAll(".activeAnswer");
-    answersMap.set(currentQuestionIndex, answerIndex);
     activeAnswers.forEach((e) => e.classList.remove("activeAnswer"));
+    
+    answersMap.set(currentQuestionIndex, answerIndex);
     div.classList.add("activeAnswer");
   });
+
+  choices.append(div);
 }
