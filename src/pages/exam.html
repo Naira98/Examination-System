@@ -54,70 +54,70 @@
 
           <!-- Controls Bar -->
           <div class="controlsBar mt-6">
-            <div class="w-max rounded-2xl border-1 border-primary shadow-md">
-              <div class="flex flex-col md:flex-row items-center gap-y-2 m-2">
-                <!-- Number of question -->
-                <div class="mx-auto flex shrink-0 items-center">
-                  <button
-                    class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
-                  >
-                    &lt;
-                  </button>
-                  <div
-                    class="mx-2 flex items-center space-x-1 text-sm tabular-nums"
-                  >
-                    <span class="text-black">1</span>
-                    <span class="text-secondary">/ 10</span>
+            <div
+              class="flex flex-col w-max rounded-2xl border-1 border-primary shadow-md"
+            >
+              <div>
+                <div class="flex flex-col md:flex-row items-center gap-y-2 m-2">
+                  <!-- Number of question -->
+
+                  <div class="mx-auto flex shrink-0 items-center">
+                    <button
+                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
+                    >
+                      &lt;
+                    </button>
+                    <div
+                      class="mx-2 flex items-center space-x-1 text-sm tabular-nums"
+                    >
+                      <span class="text-black">1</span>
+                      <span class="text-secondary">/ 10</span>
+                    </div>
+                    <button
+                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
+                    >
+                      &gt;
+                    </button>
                   </div>
-                  <button
-                    class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
-                  >
-                    &gt;
-                  </button>
+
+                  <!-- Vertical Separator -->
+                  <div
+                    class="hidden md:block mx-3 h-6 w-px bg-primary rounded-full"
+                  ></div>
+
+                  <!-- Buttons -->
+                  <div class="mx-auto flex space-x-2">
+                    <button
+                      class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-red-200/60 dark:bg-red-800/80 px-2.5 py-2 text-red-600 dark:text-red-300 cursor-pointer"
+                    >
+                      <div class="flex justify-center items-center">
+                        <i class="fa-solid fa-eraser mr-2"></i>
+                        <span>Erase Answer</span>
+                      </div>
+                    </button>
+                    <button
+                      class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-yellow-200/60 dark:bg-yellow-600/80 px-2.5 py-2 text-yellow-600 dark:text-yellow-200 cursor-pointer"
+                    >
+                      <div class="flex justify-center items-center">
+                        <i class="fa-regular fa-bookmark mr-2"></i>
+                        <span>Bookmark</span>
+                      </div>
+                    </button>
+                  </div>
                 </div>
 
-                <!-- Vertical Separator -->
-                <div
-                  class="hidden md:block mx-3 h-6 w-px bg-primary rounded-full"
-                ></div>
-
-                <!-- Buttons -->
-                <div class="mx-auto flex space-x-2">
+                <!-- Submit -->
+                <div class="flex flex-col">
                   <button
-                    class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-red-200/60 dark:bg-red-800/80 px-2.5 py-2 text-red-600 dark:text-red-300 cursor-pointer"
+                    class="flex-1 h-10 text-sm cursor-pointer items-center justify-center rounded-lg bg-teal-500 dark:bg-teal-600/80 px-3 py-2 text-white transition-colors duration-300 dark:hover:bg-teal-800 hover:bg-teal-600 min-w-fit gap-y-2 m-2"
                   >
-                    <div
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <i class="fa-solid fa-eraser mr-2"></i>
-                      <span>Erase Answer</span>
-                    </div>
-                  </button>
-                  <button
-                    class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-yellow-200/60 dark:bg-yellow-600/80 px-2.5 py-2 text-yellow-600 dark:text-yellow-200 cursor-pointer"
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <i class="fa-regular fa-bookmark mr-2"></i>
-                      <span>Bookmark</span>
-                    </div>
+                    <i class="fa-solid fa-check mr-2"></i>
+                    <span> Submit Exam </span>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Submit -->
-          <!-- <button class="btn">Submit</button> -->
         </div>
       </div>
 
