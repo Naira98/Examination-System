@@ -47,6 +47,14 @@
   @apply bg-brand cursor-pointer text-background font-semibold py-2 block rounded-lg text-xl hover:bg-brand-light transform transition hover:-translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-brand active:bg-brand-dark;
 }
 
+.answer {
+  @apply w-[70%] border-1 border-brand rounded-4xl px-5 py-3 cursor-pointer transition transform hover:translate-x-2 hover:bg-brand;
+}
+
+.activeAnswer {
+  @apply translate-x-2 bg-brand;
+}
+
 @layer utilities;
 .timer {
   --bar-width: 20px;
@@ -57,7 +65,7 @@
     var(--color-brand) var(--angle),
     var(--color-primary) var(--angle)
   );
-  
+
   box-shadow: inset var(--box-shadow);
   transition: all;
   max-width: 132px;

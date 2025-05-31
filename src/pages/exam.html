@@ -8,14 +8,56 @@
     <script defer type="module" src="/src/services/exam.js"></script>
   </head>
   <body>
-    <div class="timer relative" style="--angle: 360deg">
-      <div
-        class="absolute inset-0 flex items-center justify-center w-full gap-1"
-      >
-        <h3 id="minutes" class="font-semibold text-2xl text-brand text-center"></h3>
-        <h3 class="font-semibold text-2xl text-brand">:</h3>
-        <h3 id="seconds" class="seconds font-semibold text-2xl text-brand text-center"></h3>
+    <div class="grid grid-cols-7">
+      <!-- Sidebar -->
+      <div class="border-r-1 bg-gray-100 border-gray-200 h-screen p-4">
+        <!-- Name -->
+        <!-- Timer -->
+        <div class="timer relative" style="--angle: 360deg">
+          <div
+            class="absolute inset-0 flex items-center justify-center w-full gap-1"
+          >
+            <h3
+              id="minutes"
+              class="font-semibold text-2xl text-brand text-center"
+            ></h3>
+            <h3 class="font-semibold text-2xl text-brand">:</h3>
+            <h3
+              id="seconds"
+              class="seconds font-semibold text-2xl text-brand text-center"
+            ></h3>
+          </div>
+        </div>
+        <!-- Questions -->
       </div>
+
+      <!-- Main part -->
+      <div class="col-span-4 p-4">
+        <!-- Logo -->
+        <div class="h-16">logo</div>
+
+        <!-- Question -->
+        <div class="p-10">
+          <div class="mb-6">
+            <span
+              class="questionNo text-brand font-extrabold text-2xl mr-2"
+            ></span>
+            <span class="question font-semibold text-lg"></span>
+          </div>
+
+          <!-- Choices -->
+          <div class="choices flex flex-col gap-2"></div>
+
+          <!-- Controls -->
+          <div class="controls"></div>
+
+          <!-- Submit -->
+          <!-- <button class="btn">Submit</button> -->
+        </div>
+      </div>
+
+      <!-- Marked Questions  -->
+      <div class="col-span-2 p-4 border-l-1">Marked questions</div>
     </div>
   </body>
 </html>
