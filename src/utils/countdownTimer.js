@@ -21,17 +21,18 @@ export function countDownTimer(timeInSeconds, almostDone) {
     let minutes = Math.floor(timeInSeconds / 60);
     let seconds = timeInSeconds % 60;
 
-    timeInSeconds -= 1;
-
+    
     if (minutes < 10) {
       minutes = `0${minutes}`;
     }
     if (seconds < 10) {
       seconds = `0${seconds}`;
     }
-
+    
     minutesClock.innerText = minutes;
     secondsClock.innerText = seconds;
     timeElem.style.setProperty("--angle", `${(360 * timeInSeconds) / originalTime}deg`);
+
+    timeInSeconds -= 1;
   }
 }
