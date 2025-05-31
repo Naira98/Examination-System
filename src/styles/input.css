@@ -28,6 +28,13 @@
   @apply border-b-1 border-primary focus:outline-none focus:border-brand;
 }
 
+.inputError {
+  @apply border-error;
+  &:focus {
+    @apply border-error;
+  }
+}
+
 .eyeBtn {
   @apply absolute focus:outline-none right-2 cursor-pointer text-secondary;
 }
@@ -38,4 +45,36 @@
 
 .btn {
   @apply bg-brand cursor-pointer text-background font-semibold py-2 block rounded-lg text-xl hover:bg-brand-light transform transition hover:-translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-brand active:bg-brand-dark;
+}
+
+@layer utilities;
+.timer {
+  --bar-width: 20px;
+  --box-shadow: 2px 2px 2px rgba(0, 0, 0, 20%);
+
+  background-image: conic-gradient(
+    var(--color-brand) 0deg,
+    var(--color-brand) var(--angle),
+    var(--color-primary) var(--angle)
+  );
+  
+  position: relative;
+  box-shadow: inset var(--box-shadow);
+  transition: all;
+  max-width: 132px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  &::after {
+    content: "";
+    background: white;
+    box-shadow: var(--box-shadow);
+    border-radius: 50%;
+    width: calc(100% - var(--bar-width));
+    aspect-ratio: 1/1;
+
+    display: grid;
+  }
 }
