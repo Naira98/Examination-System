@@ -58,7 +58,6 @@
     var(--color-primary) var(--angle)
   );
   
-  position: relative;
   box-shadow: inset var(--box-shadow);
   transition: all;
   max-width: 132px;

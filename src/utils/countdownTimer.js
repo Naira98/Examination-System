@@ -1,27 +1,27 @@
-const minutesClock = document.querySelector(".minutes");
-const secondsClock = document.querySelector(".seconds");
+const minutesClock = document.querySelector("#minutes");
+const secondsClock = document.querySelector("#seconds");
 const timeElem = document.querySelector(".timer");
 
-export function countDownTimer(time, almostDone) {
-  const originalTime = time;
+export function countDownTimer(timeInSeconds, almostDone) {
+  const originalTime = timeInSeconds;
 
   timer();
   let x = setInterval(timer, 1000);
 
   function timer() {
-    if (time < 0) {
+    if (timeInSeconds < 0) {
       clearInterval(x);
       return;
     }
 
-    if (time <= almostDone) {
+    if (timeInSeconds <= almostDone) {
       timeElem.style.setProperty("--color-brand", "var(--color-error)");
     }
 
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+    let minutes = Math.floor(timeInSeconds / 60);
+    let seconds = timeInSeconds % 60;
 
-    time -= 1;
+    timeInSeconds -= 1;
 
     if (minutes < 10) {
       minutes = `0${minutes}`;
@@ -32,6 +32,6 @@ export function countDownTimer(time, almostDone) {
 
     minutesClock.innerText = minutes;
     secondsClock.innerText = seconds;
-    timeElem.style.setProperty("--angle", `${(360 * time) / originalTime}deg`);
+    timeElem.style.setProperty("--angle", `${(360 * timeInSeconds) / originalTime}deg`);
   }
 }
