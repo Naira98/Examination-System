@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>Exam</title>
     <link rel="stylesheet" href="/src/styles/output.css" />
     <script defer type="module" src="/src/services/exam.js"></script>
@@ -48,8 +52,69 @@
           <!-- Choices -->
           <div class="choices flex flex-col gap-2"></div>
 
-          <!-- Controls -->
-          <div class="controls"></div>
+          <!-- Controls Bar -->
+          <div class="controlsBar mt-6">
+            <div class="w-max rounded-2xl border-1 border-primary shadow-md">
+              <div class="flex flex-col md:flex-row items-center gap-y-2 m-2">
+                <!-- Number of question -->
+                <div class="mx-auto flex shrink-0 items-center">
+                  <button
+                    class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
+                  >
+                    &lt;
+                  </button>
+                  <div
+                    class="mx-2 flex items-center space-x-1 text-sm tabular-nums"
+                  >
+                    <span class="text-black">1</span>
+                    <span class="text-secondary">/ 10</span>
+                  </div>
+                  <button
+                    class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
+                  >
+                    &gt;
+                  </button>
+                </div>
+
+                <!-- Vertical Separator -->
+                <div
+                  class="hidden md:block mx-3 h-6 w-px bg-primary rounded-full"
+                ></div>
+
+                <!-- Buttons -->
+                <div class="mx-auto flex space-x-2">
+                  <button
+                    class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-red-200/60 dark:bg-red-800/80 px-2.5 py-2 text-red-600 dark:text-red-300 cursor-pointer"
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <i class="fa-solid fa-eraser mr-2"></i>
+                      <span>Erase Answer</span>
+                    </div>
+                  </button>
+                  <button
+                    class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-yellow-200/60 dark:bg-yellow-600/80 px-2.5 py-2 text-yellow-600 dark:text-yellow-200 cursor-pointer"
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <i class="fa-regular fa-bookmark mr-2"></i>
+                      <span>Bookmark</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Submit -->
           <!-- <button class="btn">Submit</button> -->
