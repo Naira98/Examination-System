@@ -70,7 +70,7 @@
                       &lt;
                     </button>
                     <div
-                      class="mx-2 flex items-center space-x-1 text-sm tabular-nums"
+                      class="mx-2 flex items-center space-x-1 tex-lg tabular-nums"
                     >
                       <span id="openedQuestion" class="text-black">1</span>
                       <span id="numberOfQuestions" class="text-secondary"
@@ -93,20 +93,19 @@
                   <!-- Buttons -->
                   <div class="mx-auto flex space-x-2">
                     <button
-                      class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-red-200/60 dark:bg-red-800/80 px-2.5 py-2 text-red-600 dark:text-red-300 cursor-pointer"
+                      disabled
+                      id="eraseAnswer"
+                      class="flex h-10 text-sm items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-red-200/60 dark:bg-red-800/80 px-2.5 py-2 text-red-600 dark:text-red-300 cursor-pointer disabled:cursor-not-allowed"
                     >
-                      <div class="flex justify-center items-center">
-                        <i class="fa-solid fa-eraser mr-2"></i>
-                        <span>Erase Answer</span>
-                      </div>
+                      <i class="fa-solid fa-eraser mr-2"></i>
+                      <span>Erase Answer</span>
                     </button>
                     <button
-                      class="flex h-10 items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-yellow-200/60 dark:bg-yellow-600/80 px-2.5 py-2 text-yellow-600 dark:text-yellow-200 cursor-pointer"
+                      id="markQuestion"
+                      class="flex h-10 text-sm items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-yellow-200/60 dark:bg-yellow-600/80 px-2.5 py-2 text-yellow-600 dark:text-yellow-200 cursor-pointer disabled:cursor-not-allowed"
                     >
-                      <div class="flex justify-center items-center">
-                        <i class="fa-regular fa-bookmark mr-2"></i>
-                        <span>Bookmark</span>
-                      </div>
+                      <i class="fa-regular fa-bookmark mr-2"></i>
+                      <span>Mark Question</span>
                     </button>
                   </div>
                 </div>
