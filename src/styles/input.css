@@ -55,6 +55,10 @@
   @apply translate-x-2 bg-brand;
 }
 
+.markedQuestion {
+  @apply p-3.5 border-1 border-brand rounded-lg cursor-pointer;
+}
+
 @layer utilities;
 .timer {
   --bar-width: 20px;

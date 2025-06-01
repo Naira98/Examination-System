@@ -9,7 +9,6 @@
     />
     <title>Exam</title>
     <link rel="stylesheet" href="/src/styles/output.css" />
-    <script defer type="module" src="/src/services/exam.js"></script>
   </head>
   <body>
     <div class="grid grid-cols-7">
@@ -126,7 +125,20 @@
       </div>
 
       <!-- Marked Questions  -->
-      <div class="col-span-2 p-4 border-l-1">Marked questions</div>
+      <div class="col-span-2 p-4 flex items-center justify-center">
+        <div
+          class="col-span-2 border-1 border-primary shadow-lg rounded-lg w-[85%] h-7/12 overflow-scroll"
+        >
+          <h1 class="title p-5">Marked Questions</h1>
+          <div id="markedQuestions" class="p-3 space-y-2"></div>
+        </div>
+      </div>
     </div>
+
+    <script src="../services/exam_utils.js"></script>
+    <script src="../services/timer.js"></script>
+    <script src="../services/mainExam.js"></script>
+    <script src="../services/controlsBar.js"></script>
+    <script src="../services/markedQuestions.js"></script>
   </body>
 </html>
