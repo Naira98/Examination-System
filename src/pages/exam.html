@@ -63,18 +63,23 @@
 
                   <div class="mx-auto flex shrink-0 items-center">
                     <button
-                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
+                      disabled
+                      id="previous"
+                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer disabled:cursor-not-allowed"
                     >
                       &lt;
                     </button>
                     <div
                       class="mx-2 flex items-center space-x-1 text-sm tabular-nums"
                     >
-                      <span class="text-black">1</span>
-                      <span class="text-secondary">/ 10</span>
+                      <span id="openedQuestion" class="text-black">1</span>
+                      <span id="numberOfQuestions" class="text-secondary"
+                        >/ 10</span
+                      >
                     </div>
                     <button
-                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer"
+                      id="next"
+                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer disabled:cursor-not-allowed"
                     >
                       &gt;
                     </button>
