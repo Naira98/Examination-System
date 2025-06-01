@@ -3,19 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>Exam</title>
     <link rel="stylesheet" href="/src/styles/output.css" />
     <script defer type="module" src="/src/services/exam.js"></script>
   </head>
   <body>
-    <div class="timer relative" style="--angle: 360deg">
-      <div
-        class="absolute inset-0 flex items-center justify-center w-full gap-1"
-      >
-        <h3 id="minutes" class="font-semibold text-2xl text-brand text-center"></h3>
-        <h3 class="font-semibold text-2xl text-brand">:</h3>
-        <h3 id="seconds" class="seconds font-semibold text-2xl text-brand text-center"></h3>
+    <div class="grid grid-cols-7">
+      <!-- Sidebar -->
+      <div class="border-r-1 bg-gray-100 border-gray-200 h-screen p-4">
+        <!-- Name -->
+        <!-- Timer -->
+        <div class="timer relative" style="--angle: 360deg">
+          <div
+            class="absolute inset-0 flex items-center justify-center w-full gap-1"
+          >
+            <h3
+              id="minutes"
+              class="font-semibold text-2xl text-brand text-center"
+            ></h3>
+            <h3 class="font-semibold text-2xl text-brand">:</h3>
+            <h3
+              id="seconds"
+              class="seconds font-semibold text-2xl text-brand text-center"
+            ></h3>
+          </div>
+        </div>
+        <!-- Questions -->
       </div>
+
+      <!-- Main part -->
+      <div class="col-span-4 p-4">
+        <!-- Logo -->
+        <div class="h-16">logo</div>
+
+        <!-- Question -->
+        <div class="p-10">
+          <div class="mb-6">
+            <span
+              class="questionNo text-brand font-extrabold text-2xl mr-2"
+            ></span>
+            <span class="question font-semibold text-lg"></span>
+          </div>
+
+          <!-- Choices -->
+          <div class="choices flex flex-col gap-2"></div>
+
+          <!-- Controls Bar -->
+          <div class="controlsBar mt-6">
+            <div
+              class="flex flex-col w-max rounded-2xl border-1 border-primary shadow-md"
+            >
+              <div>
+                <div class="flex flex-col md:flex-row items-center gap-y-2 m-2">
+                  <!-- Number of question -->
+
+                  <div class="mx-auto flex shrink-0 items-center">
+                    <button
+                      disabled
+                      id="previous"
+                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer disabled:cursor-not-allowed"
+                    >
+                      &lt;
+                    </button>
+                    <div
+                      class="mx-2 flex items-center space-x-1 tex-lg tabular-nums"
+                    >
+                      <span id="openedQuestion" class="text-black">1</span>
+                      <span id="numberOfQuestions" class="text-secondary"
+                        >/ 10</span
+                      >
+                    </div>
+                    <button
+                      id="next"
+                      class="p-1 transition-colors text-secondary hover:text-black disabled:text-primary cursor-pointer disabled:cursor-not-allowed"
+                    >
+                      &gt;
+                    </button>
+                  </div>
+
+                  <!-- Vertical Separator -->
+                  <div
+                    class="hidden md:block mx-3 h-6 w-px bg-primary rounded-full"
+                  ></div>
+
+                  <!-- Buttons -->
+                  <div class="mx-auto flex space-x-2">
+                    <button
+                      disabled
+                      id="eraseAnswer"
+                      class="flex h-10 text-sm items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-red-200/60 dark:bg-red-800/80 px-2.5 py-2 text-red-600 dark:text-red-300 cursor-pointer disabled:cursor-not-allowed"
+                    >
+                      <i class="fa-solid fa-eraser mr-2"></i>
+                      <span>Erase Answer</span>
+                    </button>
+                    <button
+                      id="markQuestion"
+                      class="flex h-10 text-sm items-center space-x-2 overflow-hidden whitespace-nowrap rounded-lg bg-yellow-200/60 dark:bg-yellow-600/80 px-2.5 py-2 text-yellow-600 dark:text-yellow-200 cursor-pointer disabled:cursor-not-allowed"
+                    >
+                      <i class="fa-regular fa-bookmark mr-2"></i>
+                      <span>Mark Question</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="flex flex-col">
+                  <button
+                    class="flex-1 h-10 text-sm cursor-pointer items-center justify-center rounded-lg bg-teal-500 dark:bg-teal-600/80 px-3 py-2 text-white transition-colors duration-300 dark:hover:bg-teal-800 hover:bg-teal-600 min-w-fit gap-y-2 m-2"
+                  >
+                    <i class="fa-solid fa-check mr-2"></i>
+                    <span> Submit Exam </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marked Questions  -->
+      <div class="col-span-2 p-4 border-l-1">Marked questions</div>
     </div>
   </body>
 </html>
