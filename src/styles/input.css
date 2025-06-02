@@ -56,7 +56,11 @@
 }
 
 .markedQuestion {
-  @apply p-3.5 border-1 border-brand rounded-lg cursor-pointer;
+  @apply p-3.5 border-1 border-brand rounded-lg cursor-pointer flex justify-between items-center;
+}
+
+.trashIcon {
+  @apply hover:bg-gray-200 p-2 rounded-full;
 }
 
 @layer utilities;
