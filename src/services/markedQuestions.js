@@ -5,8 +5,12 @@ function showMarkedQuestions() {
 
   markedQuestions.forEach((questionIndex) => {
     let div = document.createElement("div");
-    div.innerText = `Question ${questionIndex + 1}`;
-    div.classList.add("markedQuestion");
+    div.innerHTML = `
+      <div id="q${questionIndex}" class="markedQuestion">
+        <span>Question ${questionIndex + 1}</span>
+        <span class="trashIcon"> <i class="fa-solid fa-trash"></i> </span>
+      </div>
+    `;
 
     div.addEventListener("click", () => {
       currentQuestionIndex = questionIndex;
@@ -14,8 +18,20 @@ function showMarkedQuestions() {
       enableDisablePrevNextBtns();
       openedQuestion.innerText = currentQuestionIndex + 1;
     });
+
     markedQuestionsContainer.append(div);
+
+    document
+      .querySelector(`#q${questionIndex} > .trashIcon`)
+      .addEventListener("click", (e) => {
+        e.stopPropagation();
+        deleteMarkedQuestion(questionIndex);
+      });
   });
 }
 
-function deleteMarkedQuestion() {}
+function deleteMarkedQuestion(questionIndex) {
+  markedQuestions.delete(questionIndex);
+  showMarkedQuestions();
+  enableDisableMarkBtn();
+}
