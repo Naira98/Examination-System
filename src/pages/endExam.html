@@ -27,15 +27,10 @@
 
         <!-- Action Buttons -->
         <div class="flex flex-col gap-3">
-            <button onclick="window.location.href='/exam-summary.html'"
+            <button onclick="window.location.href='./examResult.html'"
                 class="bg-green-200 text-green-800 px-4 py-2 rounded-lg hover:bg-green-300 transition transition">
                 <i class="fa-solid fa-file-lines mr-2"></i>View Exam Summary
             </button>
-
-            <!-- <button onclick="window.location.href='/exam/exam.html'"
-                class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition">
-                <i class="fa-solid fa-rotate-right mr-2"></i>Retake Exam
-            </button> -->
 
             <button onclick="window.location.href='../../index.html'"
                 class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition">
@@ -45,7 +40,7 @@
     </div>
 
     <script>
-        // Example to populate dynamic stats if stored in localStorage
+        //  dynamic stats if stored in localStorage
         document.addEventListener("DOMContentLoaded", () =>
         {
             const total = localStorage.getItem("totalQuestions") || 10;

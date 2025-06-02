@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/src/styles/output.css" />
+</head>
+
+<body class="bg-gray-100 min-h-screen py-12 px-4 flex justify-center items-center">
+
+    <div class="bg-white rounded-xl shadow-xl p-8 w-full max-w-3xl">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="text-green-500 text-5xl mb-4">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800">Exam Completed!</h1>
+            <p class="text-gray-500 text-lg">Great job</p>
+        </div>
+
+        <!-- Score & Stats -->
+        <div class="flex flex-col md:flex-row justify-around items-center mb-10 gap-6">
+            <div class="text-center">
+                <p class="text-sm text-gray-400">Your Score</p>
+                <p id="score" class="text-4xl font-bold text-blue-600"></p>
+                <div class="text-yellow-400 mt-1">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="text-sm text-gray-400">Questions</p>
+                <p id="stats" class="text-xl font-semibold text-gray-700"></p>
+            </div>
+        </div>
+
+        <!-- Question Analysis -->
+        <div>
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Question Analysis</h2>
+            <div id="questionAnalysis"></div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center mt-8 gap-4">
+            <button onclick="window.location.href='../../index.html'"
+                class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 transition">
+                <i class="fa-solid fa-house mr-2"></i>Go Home
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>
+        {
+            // Get answers from localStorage
+            const answers = JSON.parse(localStorage.getItem('answers') || '[]');
+
+            // Calculate statistics
+            const totalQuestions = answers.length;
+            const correctAnswers = answers.filter(answer => answer.isCorrect).length;
+            const incorrectAnswers = totalQuestions - correctAnswers;
+            const score = Math.round((correctAnswers / totalQuestions) * 100);
+
+            // Update score and stats
+            document.getElementById('score').textContent = `${score}%`;
+            document.getElementById('stats').textContent =
+                `${correctAnswers} Correct · ${incorrectAnswers} Incorrect · ${totalQuestions} Total`;
+
+            // Generate question analysis
+            const analysisContainer = document.getElementById('questionAnalysis');
+            answers.forEach((answer, index) =>
+            {
+                const status = answer.isCorrect ? 'Correct' : 'Incorrect';
+                const statusColor = answer.isCorrect ? 'green' : 'red';
+
+                const questionDiv = document.createElement('div');
+                questionDiv.className = `border border-${statusColor}-200 rounded-lg p-4 mb-4 bg-${statusColor}-50`;
+                questionDiv.innerHTML = `
+                    <p class="font-medium text-gray-700 mb-2">
+                        <span class="text-${statusColor}-500 font-bold">${status}</span> – Question ${index + 1}:
+                    </p>
+                    <p class="text-gray-800 mb-2">${answer.question}</p>
+                    <div class="mb-1">
+                        <span class="inline-block px-3 py-1 rounded bg-${answer.isCorrect ? 'green' : 'red'}-200 text-${answer.isCorrect ? 'green' : 'red'}-700 text-sm">
+                            Your answer: <strong>${answer.selectedAnswer || 'Not answered'}</strong>
+                        </span>
+                    </div>
+                    ${!answer.isCorrect ? `
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded bg-green-200 text-green-700 text-sm">
+                            Correct answer: <strong>${answer.correctAnswer}</strong>
+                        </span>
+                    </div>` : ''}
+                `;
+                analysisContainer.appendChild(questionDiv);
+            });
+        });
+    </script>
+</body>
+
+</html>
