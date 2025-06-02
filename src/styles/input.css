@@ -76,7 +76,8 @@
 
   box-shadow: inset var(--box-shadow);
   transition: all;
-  max-width: 132px;
+  width: 120px;
+  /* max-width: 132px; */
   aspect-ratio: 1/1;
   border-radius: 50%;
   display: grid;
@@ -84,7 +85,7 @@
 
   &::after {
     content: "";
-    background: white;
+    background: #f3f4f6; /* gray-100 */
     box-shadow: var(--box-shadow);
     border-radius: 50%;
     width: calc(100% - var(--bar-width));

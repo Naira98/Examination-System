@@ -1,42 +1,51 @@
+const username = document.querySelector(".username");
 const minutesClock = document.querySelector("#minutes");
 const secondsClock = document.querySelector("#seconds");
 const timeElem = document.querySelector(".timer");
 
-let timeInSeconds = 0.5 * 60;
+/* Name */
+const registeredUser = JSON.parse(localStorage.getItem("registeredUser"));
+
+username.innerHTML = `
+  <div class="bg-gray-300 text-gray-600 rounded-md text-center mr-2 flex justify-center items-center w-7 h-7">
+    ${registeredUser.firstName.slice(0, 1).toUpperCase()} 
+  </div>
+  <div>
+    ${capitalizeFirstLetter(registeredUser.firstName)} 
+    ${capitalizeFirstLetter(registeredUser.lastName)}
+  </div>
+`;
+
+/* Timer */
+let timeInSeconds = 1.5 * 60;
 let almostDone = 30;
 
 const originalTime = timeInSeconds;
 
 timer();
-let x = setInterval(timer, 1000);
+// let x = setInterval(timer, 1000);
 
-function timer()
-{
-  if (timeInSeconds < 0)
-  {
+function timer() {
+  if (timeInSeconds < 0) {
     clearInterval(x);
     // Redirect to timeout page
-    window.location.href = "./timeOut.html"
+    window.location.href = "./timeOut.html";
     return;
   }
 
-  if (timeInSeconds <= almostDone)
-  {
+  if (timeInSeconds <= almostDone) {
     timeElem.style.setProperty("--color-brand", "var(--color-error)");
   }
 
   let minutes = Math.floor(timeInSeconds / 60);
   let seconds = timeInSeconds % 60;
 
-  if (minutes < 10)
-  {
+  if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  if (seconds < 10)
-  {
+  if (seconds < 10) {
     seconds = `0${seconds}`;
   }
-
 
   minutesClock.innerText = minutes;
   secondsClock.innerText = seconds;
