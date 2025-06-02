@@ -1,23 +1,19 @@
-function showQuestion(questions)
-{
+function showQuestion(questions) {
   questionNo.textContent = `${currentQuestionIndex + 1}.`;
   question.textContent = questions[currentQuestionIndex].question;
   choices.innerHTML = "";
 
-  for (let answerIndex in questions[currentQuestionIndex].answers)
-  {
+  for (let answerIndex in questions[currentQuestionIndex].answers) {
     let div = document.createElement("div");
 
     div.classList.add("answer");
-    if (choosenAnswers.get(currentQuestionIndex) == answerIndex)
-    {
+    if (choosenAnswers.get(currentQuestionIndex) == answerIndex) {
       div.classList.add("activeAnswer");
     }
 
     div.textContent = questions[currentQuestionIndex].answers[answerIndex].text;
 
-    div.addEventListener("click", () =>
-    {
+    div.addEventListener("click", () => {
       removeActiveAnswer();
       choosenAnswers.set(currentQuestionIndex, answerIndex);
       eraseBtn.disabled = false;
@@ -30,12 +26,10 @@ function showQuestion(questions)
   }
 }
 
-function shuffleQuestions(questions)
-{
+function shuffleQuestions(questions) {
   let currentIndex = questions.length;
 
-  while (currentIndex != 0)
-  {
+  while (currentIndex != 0) {
     let randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
@@ -47,29 +41,24 @@ function shuffleQuestions(questions)
   return questions;
 }
 
-function enableDisablePrevNextBtns()
-{
+function enableDisablePrevNextBtns() {
   previousBtn.disabled = currentQuestionIndex === 0;
   nextBtn.disabled = currentQuestionIndex === questions.length - 1;
 }
 
-function removeActiveAnswer()
-{
+function removeActiveAnswer() {
   const activeAnswers = document.querySelectorAll(".activeAnswer");
   activeAnswers.forEach((e) => e.classList.remove("activeAnswer"));
 }
 
-function enableDisableMarkBtn()
-{
+function enableDisableMarkBtn() {
   markBtn.disabled = markedQuestions.has(currentQuestionIndex);
 }
 
-function getAnswers(questions)
-{
+function getAnswers(questions) {
   const answers = [];
 
-  questions.forEach((question, index) =>
-  {
+  questions.forEach((question, index) => {
     const selectedIndex = choosenAnswers.get(index);
     const selectedAnswer = question.answers[selectedIndex];
 
@@ -84,8 +73,7 @@ function getAnswers(questions)
   return answers;
 }
 submitExamBtn = document.getElementById("submit");
-submitExamBtn.addEventListener("click", async (e) =>
-{
+submitExamBtn.addEventListener("click", async (e) => {
   console.log("Submit button clicked");
   e.preventDefault();
 
@@ -110,3 +98,7 @@ submitExamBtn.addEventListener("click", async (e) =>
   // Redirect to endExam.html
   window.location.href = "./endExam.html";
 });
+
+function capitalizeFirstLetter(val) {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
