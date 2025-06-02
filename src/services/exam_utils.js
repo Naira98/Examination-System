@@ -1,3 +1,4 @@
+/* Questions */
 function showQuestion(questions) {
   questionNo.textContent = `${currentQuestionIndex + 1}.`;
   question.textContent = questions[currentQuestionIndex].question;
@@ -26,6 +27,20 @@ function showQuestion(questions) {
   }
 }
 
+function updateActiveQuestionSideBar() {
+  const sideBarQuestions = document.querySelectorAll(".sideBarQuestion");
+  sideBarQuestions.forEach((e) => e.classList.remove("activeSideBarQuestion"));
+  sideBarQuestions[currentQuestionIndex].classList.add("activeSideBarQuestion");
+}
+
+function renderQuestion(questions) {
+  showQuestion(questions);
+  enableDisablePrevNextBtns();
+  openedQuestion.innerText = currentQuestionIndex + 1;
+  updateActiveQuestionSideBar();
+}
+
+
 function shuffleQuestions(questions) {
   let currentIndex = questions.length;
 
@@ -41,14 +56,15 @@ function shuffleQuestions(questions) {
   return questions;
 }
 
-function enableDisablePrevNextBtns() {
-  previousBtn.disabled = currentQuestionIndex === 0;
-  nextBtn.disabled = currentQuestionIndex === questions.length - 1;
-}
-
+/* Contols Bar */
 function removeActiveAnswer() {
   const activeAnswers = document.querySelectorAll(".activeAnswer");
   activeAnswers.forEach((e) => e.classList.remove("activeAnswer"));
+}
+
+function enableDisablePrevNextBtns() {
+  previousBtn.disabled = currentQuestionIndex === 0;
+  nextBtn.disabled = currentQuestionIndex === questions.length - 1;
 }
 
 function enableDisableEraseBtn() {

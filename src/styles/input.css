@@ -63,6 +63,14 @@
   @apply hover:bg-gray-200 p-2 rounded-full;
 }
 
+.sideBarQuestion {
+  @apply text-gray-700 px-2 py-1 rounded-lg transition hover:bg-gray-300 cursor-pointer;
+}
+
+.activeSideBarQuestion {
+  @apply bg-gray-300
+}
+
 @layer utilities;
 .timer {
   --bar-width: 20px;
