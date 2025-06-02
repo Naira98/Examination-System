@@ -51,6 +51,10 @@ function removeActiveAnswer() {
   activeAnswers.forEach((e) => e.classList.remove("activeAnswer"));
 }
 
+function enableDisableEraseBtn() {
+  eraseBtn.disabled = !choosenAnswers.has(currentQuestionIndex);
+}
+
 function enableDisableMarkBtn() {
   markBtn.disabled = markedQuestions.has(currentQuestionIndex);
 }

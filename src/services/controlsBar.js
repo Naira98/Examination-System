@@ -36,6 +36,7 @@ async function run() {
   eraseBtn.addEventListener("click", () => {
     choosenAnswers.delete(currentQuestionIndex);
     removeActiveAnswer();
+    enableDisableEraseBtn();
   });
 
   markBtn.addEventListener("click", () => {
