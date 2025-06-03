@@ -1,3 +1,4 @@
+/* Questions */
 function showQuestion(questions) {
   questionNo.textContent = `${currentQuestionIndex + 1}.`;
   question.textContent = questions[currentQuestionIndex].question;
@@ -18,6 +19,11 @@ function showQuestion(questions) {
       choosenAnswers.set(currentQuestionIndex, answerIndex);
       eraseBtn.disabled = false;
       div.classList.add("activeAnswer");
+
+      const activeSideBarQuestion = document.querySelector(
+        ".activeSideBarQuestion > .circle > .answerIndicator"
+      );
+      activeSideBarQuestion.classList.add("answered");
     });
 
     enableDisableMarkBtn();
@@ -26,24 +32,19 @@ function showQuestion(questions) {
   }
 }
 
-function shuffleQuestions(questions) {
-  let currentIndex = questions.length;
-
-  while (currentIndex != 0) {
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [questions[currentIndex], questions[randomIndex]] = [
-      questions[randomIndex],
-      questions[currentIndex],
-    ];
-  }
-  return questions;
+function updateActiveQuestionSideBar() {
+  const sideBarQuestions = document.querySelectorAll(".sideBarQuestion");
+  sideBarQuestions.forEach((e) => e.classList.remove("activeSideBarQuestion"));
+  sideBarQuestions[currentQuestionIndex].classList.add("activeSideBarQuestion");
 }
 
-function enableDisablePrevNextBtns() {
-  previousBtn.disabled = currentQuestionIndex === 0;
-  nextBtn.disabled = currentQuestionIndex === questions.length - 1;
+function renderNewQuestion(questions) {
+  showQuestion(questions);
+  enableDisablePrevNextBtns();
+  openedQuestion.innerText = currentQuestionIndex + 1;
+  updateActiveQuestionSideBar();
+  enableDisableEraseBtn();
+  enableDisableMarkBtn();
 }
 
 function removeActiveAnswer() {
@@ -51,8 +52,25 @@ function removeActiveAnswer() {
   activeAnswers.forEach((e) => e.classList.remove("activeAnswer"));
 }
 
+/* Contols Bar */
+function enableDisablePrevNextBtns() {
+  previousBtn.disabled = currentQuestionIndex === 0;
+  nextBtn.disabled = currentQuestionIndex === questions.length - 1;
+}
+
+function enableDisableEraseBtn() {
+  eraseBtn.disabled = !choosenAnswers.has(currentQuestionIndex);
+}
+
 function enableDisableMarkBtn() {
   markBtn.disabled = markedQuestions.has(currentQuestionIndex);
+}
+
+function removeAnsweredQuestionSideBar() {
+  const sideBarQuestions = document.querySelectorAll(".circle");
+  sideBarQuestions[currentQuestionIndex].children[0].classList.remove(
+    "answered"
+  );
 }
 
 function getAnswers(questions) {
