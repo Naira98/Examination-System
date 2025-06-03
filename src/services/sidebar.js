@@ -65,7 +65,9 @@ async function run() {
     const div = document.createElement("div");
     div.classList.add("sideBarQuestion");
     div.innerHTML = `
+    <div class="circle">
       <div class="answerIndicator"></div>
+    </div>
       <div>Question ${i + 1} </div>
     `;
 

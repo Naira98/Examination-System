@@ -21,7 +21,7 @@ function showQuestion(questions) {
       div.classList.add("activeAnswer");
 
       const activeSideBarQuestion = document.querySelector(
-        ".activeSideBarQuestion > .answerIndicator"
+        ".activeSideBarQuestion > .circle > .answerIndicator"
       );
       activeSideBarQuestion.classList.add("answered");
     });
@@ -67,8 +67,10 @@ function enableDisableMarkBtn() {
 }
 
 function removeAnsweredQuestionSideBar() {
-  const sideBarQuestions = document.querySelectorAll(".sideBarQuestion");
-  sideBarQuestions[currentQuestionIndex].children[0].classList.remove("answered");
+  const sideBarQuestions = document.querySelectorAll(".circle");
+  sideBarQuestions[currentQuestionIndex].children[0].classList.remove(
+    "answered"
+  );
 }
 
 function getAnswers(questions) {
