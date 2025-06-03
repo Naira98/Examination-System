@@ -33,27 +33,11 @@ function updateActiveQuestionSideBar() {
   sideBarQuestions[currentQuestionIndex].classList.add("activeSideBarQuestion");
 }
 
-function renderQuestion(questions) {
+function renderNewQuestion(questions) {
   showQuestion(questions);
   enableDisablePrevNextBtns();
   openedQuestion.innerText = currentQuestionIndex + 1;
   updateActiveQuestionSideBar();
-}
-
-
-function shuffleQuestions(questions) {
-  let currentIndex = questions.length;
-
-  while (currentIndex != 0) {
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [questions[currentIndex], questions[randomIndex]] = [
-      questions[randomIndex],
-      questions[currentIndex],
-    ];
-  }
-  return questions;
 }
 
 /* Contols Bar */

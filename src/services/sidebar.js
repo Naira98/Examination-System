@@ -68,7 +68,7 @@ async function run() {
 
     div.addEventListener("click", () => {
       currentQuestionIndex = i;
-      renderQuestion(questions);
+      renderNewQuestion(questions);
     });
 
     questionsContainer.append(div);

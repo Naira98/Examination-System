@@ -15,12 +15,12 @@ async function run() {
 
   previousBtn.addEventListener("click", () => {
     currentQuestionIndex -= 1;
-    renderQuestion(questions);
+    renderNewQuestion(questions);
   });
 
   nextBtn.addEventListener("click", () => {
     currentQuestionIndex += 1;
-    renderQuestion(questions);
+    renderNewQuestion(questions);
   });
 
   eraseBtn.addEventListener("click", () => {
@@ -46,7 +46,7 @@ async function run() {
 
       div.addEventListener("click", () => {
         currentQuestionIndex = questionIndex;
-        renderQuestion(questions);
+        renderNewQuestion(questions);
       });
 
       markedQuestionsContainer.append(div);
