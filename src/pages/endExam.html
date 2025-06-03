@@ -1,59 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exam End</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="../styles/output.css" />
-</head>
+  </head>
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="bg-white shadow-xl rounded-xl p-8 max-w-xl w-full text-center space-y-6">
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div
+      class="bg-white shadow-xl rounded-xl p-8 max-w-xl w-full text-center space-y-6"
+    >
+      <div>
+        <i class="fa-solid fa-user-graduate text-5xl text-teal-600 mb-3"></i>
+        <h1 class="text-3xl font-bold text-gray-800">
+          Exam Has Ended Successfully
+        </h1>
+        <p class="text-gray-500 text-sm mt-1">
+          Here's a quick summary of your exam.
+        </p>
+      </div>
+
+      <!-- Exam Summary -->
+      <div
+        class="grid grid-cols-2 gap-4 text-left bg-gray-50 rounded-lg p-4 text-gray-700"
+      >
         <div>
-            <i class="fa-solid fa-user-graduate text-5xl text-teal-600 mb-3"></i>
-            <h1 class="text-3xl font-bold text-gray-800"> Exam Has Ended Successfully</h1>
-            <p class="text-gray-500 text-sm mt-1">Here's a quick summary of your exam.</p>
+          <strong>Status:</strong> <span id="examStatus">Submitted</span>
         </div>
-
-        <!-- Exam Summary -->
-        <div class="grid grid-cols-2 gap-4 text-left bg-gray-50 rounded-lg p-4 text-gray-700">
-            <div><strong>Status:</strong> <span id="examStatus">Submitted</span></div>
-            <div><strong>Total Questions:</strong> <span id="totalQuestions">10</span></div>
-            <div><strong>Answered:</strong> <span id="answeredQuestions">8</span></div>
-            <div><strong>Marked for Review:</strong> <span id="markedQuestionsCount">2</span></div>
+        <div>
+          <strong>Total Questions:</strong> <span id="totalQuestions">10</span>
         </div>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-col gap-3">
-            <button onclick="window.location.href='./examResult.html'"
-                class="bg-green-200 text-green-800 px-4 py-2 rounded-lg hover:bg-green-300 transition">
-                <i class="fa-solid fa-file-lines mr-2"></i>View Exam Summary
-            </button>
-
-            <button onclick="window.location.href='homePage.html'"
-                class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition">
-                <i class="fa-solid fa-house mr-2"></i>Go to Home
-            </button>
+        <div>
+          <strong>Answered:</strong> <span id="answeredQuestions">8</span>
         </div>
+        <div>
+          <strong>Marked for Review:</strong>
+          <span id="markedQuestionsCount">2</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col gap-3">
+        <button
+          onclick="window.location.href='./examResult.html'"
+          class="bg-green-200 text-green-800 px-4 py-2 rounded-lg hover:bg-green-300 transition"
+        >
+          <i class="fa-solid fa-file-lines mr-2"></i>View Exam Summary
+        </button>
+
+        <button
+          onclick="window.location.href='homePage.html'"
+          class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition"
+        >
+          <i class="fa-solid fa-house mr-2"></i>Go to Home
+        </button>
+      </div>
     </div>
 
     <script>
-        //  dynamic stats if stored in localStorage
-        document.addEventListener("DOMContentLoaded", () =>
-        {
-            const total = localStorage.getItem("totalQuestions") || 10;
-            const answered = localStorage.getItem("answeredQuestions") || 0;
-            const marked = localStorage.getItem("markedQuestionsCount") || 0;
-            const status = localStorage.getItem("examStatus") || "Submitted";
+      //  dynamic stats if stored in localStorage
+      document.addEventListener("DOMContentLoaded", () => {
+        const total = localStorage.getItem("totalQuestions") || 10;
+        const answered = localStorage.getItem("answeredQuestions") || 0;
+        const marked = localStorage.getItem("markedQuestionsCount") || 0;
+        const status = localStorage.getItem("examStatus") || "Submitted";
 
-            document.getElementById("totalQuestions").innerText = total;
-            document.getElementById("answeredQuestions").innerText = answered;
-            document.getElementById("markedQuestionsCount").innerText = marked;
-            document.getElementById("examStatus").innerText = status;
-        });
+        document.getElementById("totalQuestions").innerText = total;
+        document.getElementById("answeredQuestions").innerText = answered;
+        document.getElementById("markedQuestionsCount").innerText = marked;
+        document.getElementById("examStatus").innerText = status;
+      });
     </script>
-</body>
-
+  </body>
 </html>
