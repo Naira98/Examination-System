@@ -27,6 +27,7 @@ async function run() {
     choosenAnswers.delete(currentQuestionIndex);
     removeActiveAnswer();
     enableDisableEraseBtn();
+    removeAnsweredQuestionSideBar(currentQuestionIndex)
   });
 
   markBtn.addEventListener("click", () => {

@@ -109,7 +109,8 @@
   height: var(--circle-diameter);
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background-color: #99a1af; /* gray-400 */
+  border: 2px solid #99a1af;
+  padding: 2px;
 }
 
 .answerIndicator.answered {

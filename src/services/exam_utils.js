@@ -19,6 +19,11 @@ function showQuestion(questions) {
       choosenAnswers.set(currentQuestionIndex, answerIndex);
       eraseBtn.disabled = false;
       div.classList.add("activeAnswer");
+
+      const activeSideBarQuestion = document.querySelector(
+        ".activeSideBarQuestion > .answerIndicator"
+      );
+      activeSideBarQuestion.classList.add("answered");
     });
 
     enableDisableMarkBtn();
@@ -38,14 +43,16 @@ function renderNewQuestion(questions) {
   enableDisablePrevNextBtns();
   openedQuestion.innerText = currentQuestionIndex + 1;
   updateActiveQuestionSideBar();
+  enableDisableEraseBtn();
+  enableDisableMarkBtn();
 }
 
-/* Contols Bar */
 function removeActiveAnswer() {
   const activeAnswers = document.querySelectorAll(".activeAnswer");
   activeAnswers.forEach((e) => e.classList.remove("activeAnswer"));
 }
 
+/* Contols Bar */
 function enableDisablePrevNextBtns() {
   previousBtn.disabled = currentQuestionIndex === 0;
   nextBtn.disabled = currentQuestionIndex === questions.length - 1;
@@ -57,6 +64,11 @@ function enableDisableEraseBtn() {
 
 function enableDisableMarkBtn() {
   markBtn.disabled = markedQuestions.has(currentQuestionIndex);
+}
+
+function removeAnsweredQuestionSideBar() {
+  const sideBarQuestions = document.querySelectorAll(".sideBarQuestion");
+  sideBarQuestions[currentQuestionIndex].children[0].classList.remove("answered");
 }
 
 function getAnswers(questions) {
