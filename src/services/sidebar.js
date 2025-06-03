@@ -64,7 +64,10 @@ async function run() {
   questions.forEach((_, i) => {
     const div = document.createElement("div");
     div.classList.add("sideBarQuestion");
-    div.innerText = `• Question ${i + 1}`;
+    div.innerHTML = `
+      <div class="answerIndicator"></div>
+      <div>Question ${i + 1} </div>
+    `;
 
     div.addEventListener("click", () => {
       currentQuestionIndex = i;

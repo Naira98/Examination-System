@@ -64,11 +64,11 @@
 }
 
 .sideBarQuestion {
-  @apply text-gray-700 px-2 py-1 rounded-lg transition hover:bg-gray-300 cursor-pointer;
+  @apply flex items-center gap-2 text-gray-700 px-2 py-1 rounded-lg transition hover:bg-gray-300 cursor-pointer;
 }
 
 .activeSideBarQuestion {
-  @apply bg-gray-300
+  @apply bg-gray-300;
 }
 
 @layer utilities;
@@ -85,7 +85,6 @@
   box-shadow: inset var(--box-shadow);
   transition: all;
   width: 120px;
-  /* max-width: 132px; */
   aspect-ratio: 1/1;
   border-radius: 50%;
   display: grid;
@@ -101,4 +100,18 @@
 
     display: grid;
   }
+}
+
+.answerIndicator {
+  --circle-diameter: 20px;
+
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #99a1af; /* gray-400 */
+}
+
+.answerIndicator.answered {
+  background-color: var(--color-brand);
 }
