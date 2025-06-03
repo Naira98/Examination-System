@@ -8,41 +8,57 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link href="../styles/output.css" rel="stylesheet" />
-    <script defer type="module" src="../services/login.js"></script>
     <title>Login</title>
   </head>
 
-<body>
-  <div class="bg-background h-screen flex justify-center items-center">
-    <form method="POST" class="form" id="form">
-      <h1 class="title mb-5 col-span-2">Login</h1>
+  <body>
+    <div class="bg-background h-screen flex justify-center items-center">
+      <form method="POST" class="form">
+        <h1 class="title mb-5 col-span-2">Login</h1>
 
-      <div class="row-span-2 col-span-2 grid grid-rows-subgrid">
-        <input class="input" type="email" id="email" placeholder="Email Address" name="email" />
-        <span class="errorMessage" id="emailError"></span>
-      </div>
+        <div class="row-span-2 col-span-2 grid grid-rows-subgrid">
+          <input
+            class="input"
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            name="email"
+          />
+          <span class="errorMessage" id="emailError"></span>
+        </div>
 
-      <div class="relative row-span-2 col-span-2 grid grid-rows-subgrid">
-        <input class="input col-span-2" type="password" id="password" placeholder="Password" />
-        <button type="button" id="togglePassword" class="eyeBtn">
-          <i class="fa-regular fa-eye"></i>
-        </button>
-        <span class="errorMessage" id="passwordError"></span>
-      </div>
-      <!-- add remember me -->
-      <div class="flex items-center col-span-2 mt-2">
-        <input type="checkbox" id="rememberMe" name="rememberMe" class="mr-2 accent-primary-600" />
-        <label for="rememberMe" class="text-slate-700 dark:text-slate-300 text-sm">Remember Me</label>
-      </div>
+        <div class="relative row-span-2 col-span-2 grid grid-rows-subgrid">
+          <input
+            class="input col-span-2"
+            type="password"
+            id="password"
+            placeholder="Password"
+          />
+          <button type="button" id="togglePassword" class="eyeBtn">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+          <span class="errorMessage" id="passwordError"></span>
+        </div>
+        <!-- add remember me -->
+        <div class="flex items-center col-span-2 mt-2">
+          <input
+            type="checkbox"
+            id="rememberMe"
+            name="rememberMe"
+            class="mr-2 accent-brand"
+          />
+          <label
+            for="rememberMe"
+            class="text-slate-700 dark:text-slate-300 text-sm"
+            >Remember Me</label
+          >
+        </div>
 
-      <button class="btn col-span-2 mt-4" type="submit">Login</button>
-      <div class="mt-4 text-center">
-        <p class="text-slate-600 dark:text-slate-400">
-          Don't have an account?
-          <a href="register.html" class="text-primary-600 dark:text-primary-400 hover:underline">Register</a>
-        </p>
-    </form>
-  </div>
-</body>
-
+        <button class="btn col-span-2 mt-4" type="submit">Login</button>
+      </form>
+    </div>
+    <script src="../services/input_validation.js"></script>
+    <script src="../services/password_utils.js"></script>
+    <script src="../services/login.js"></script>
+  </body>
 </html>
