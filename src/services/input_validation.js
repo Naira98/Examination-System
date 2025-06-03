@@ -1,7 +1,7 @@
 const nameRegex = /^[a-zA-Z]+$/;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-export function validateName(name, errorMessage) {
+function validateName(name, errorMessage) {
   errorMessage.innerText = "";
   name.classList.remove("inputError");
 
@@ -13,7 +13,7 @@ export function validateName(name, errorMessage) {
   return true;
 }
 
-export function vaildateEmail(email, errorMessage) {
+function vaildateEmail(email, errorMessage) {
   errorMessage.innerText = "";
   email.classList.remove("inputError");
 
@@ -25,7 +25,7 @@ export function vaildateEmail(email, errorMessage) {
   return true;
 }
 
-export function validatePassword(password, errorMessage) {
+function validatePassword(password, errorMessage) {
   errorMessage.innerText = "";
   password.classList.remove("inputError");
 
@@ -37,11 +37,7 @@ export function validatePassword(password, errorMessage) {
   return true;
 }
 
-export function validatePasswordsMatch(
-  firstPassword,
-  secondPassword,
-  errorMessage
-) {
+function validatePasswordsMatch(firstPassword, secondPassword, errorMessage) {
   errorMessage.innerText = "";
   secondPassword.classList.remove("inputError");
 

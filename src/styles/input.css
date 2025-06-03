@@ -47,6 +47,30 @@
   @apply bg-brand cursor-pointer text-background font-semibold py-2 block rounded-lg text-xl hover:bg-brand-light transform transition hover:-translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-brand active:bg-brand-dark;
 }
 
+.answer {
+  @apply w-[70%] border-1 border-brand rounded-4xl px-5 py-3 cursor-pointer transition transform hover:translate-x-2 hover:bg-brand;
+}
+
+.activeAnswer {
+  @apply translate-x-2 bg-brand;
+}
+
+.markedQuestion {
+  @apply p-3.5 border-1 border-brand rounded-lg cursor-pointer flex justify-between items-center;
+}
+
+.trashIcon {
+  @apply hover:bg-gray-200 p-2 rounded-full;
+}
+
+.sideBarQuestion {
+  @apply flex items-center gap-2 text-gray-700 px-2 py-1 rounded-lg transition hover:bg-gray-300 cursor-pointer;
+}
+
+.activeSideBarQuestion {
+  @apply bg-gray-300;
+}
+
 @layer utilities;
 .timer {
   --bar-width: 20px;
@@ -57,11 +81,10 @@
     var(--color-brand) var(--angle),
     var(--color-primary) var(--angle)
   );
-  
-  position: relative;
+
   box-shadow: inset var(--box-shadow);
   transition: all;
-  max-width: 132px;
+  width: 120px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   display: grid;
@@ -69,7 +92,7 @@
 
   &::after {
     content: "";
-    background: white;
+    background: #f3f4f6; /* gray-100 */
     box-shadow: var(--box-shadow);
     border-radius: 50%;
     width: calc(100% - var(--bar-width));
@@ -77,4 +100,21 @@
 
     display: grid;
   }
+}
+
+.circle {
+  --circle-diameter: 20px;
+
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid #99a1af;
+  padding: 3px;
+}
+
+.answered {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--color-brand);
 }

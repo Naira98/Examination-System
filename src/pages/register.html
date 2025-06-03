@@ -7,8 +7,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link href="/src/styles/output.css" rel="stylesheet" />
-    <script defer type="module" src="/src/services/register.js"></script>
+    <link href="../styles/output.css" rel="stylesheet" />
     <title>Register</title>
   </head>
   <body>
@@ -57,7 +56,12 @@
             name="password"
             placeholder="Password"
           />
-          <button type="button" id="togglePassword" class="eyeBtn">
+          <button
+            tabindex="-1"
+            type="button"
+            id="togglePassword"
+            class="eyeBtn"
+          >
             <i class="fa-regular fa-eye"></i>
           </button>
 
@@ -72,7 +76,12 @@
             name="confirmPassword"
             placeholder="Confirm Password"
           />
-          <button type="button" id="toggleConfirmPassword" class="eyeBtn">
+          <button
+            tabindex="-1"
+            type="button"
+            id="toggleConfirmPassword"
+            class="eyeBtn"
+          >
             <i class="fa-regular fa-eye"></i>
           </button>
 
@@ -82,5 +91,8 @@
         <button class="btn col-span-2 mt-4" type="submit">Register</button>
       </form>
     </div>
+    <script src="../services/input_validation.js"></script>
+    <script src="../services/password_utils.js"></script>
+    <script src="../services/register.js"></script>
   </body>
 </html>

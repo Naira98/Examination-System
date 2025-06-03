@@ -1,12 +1,3 @@
-import {
-  validateName,
-  vaildateEmail,
-  validatePassword,
-  validatePasswordsMatch,
-} from "../utils/validation.js";
-import { generateHash } from "../utils/hashing.js";
-import { showHidePassword } from "../utils/showHidePassword.js";
-
 const form = document.querySelector("form");
 const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
@@ -22,6 +13,8 @@ const confirmPasswordError = document.querySelector("#confirmPasswordError");
 
 const showPassword = document.querySelector("#togglePassword");
 const showConfirmPassword = document.querySelector("#toggleConfirmPassword");
+
+localStorage.clear();
 
 const fields = [
   {
