@@ -1,7 +1,7 @@
 const username = document.querySelector(".username");
-const minutesClock = document.querySelector("#minutes");
-const secondsClock = document.querySelector("#seconds");
-const timeElem = document.querySelector(".timer");
+const minutesClock = document.querySelectorAll("#minutes");
+const secondsClock = document.querySelectorAll("#seconds");
+const timeElems = document.querySelectorAll(".timer");
 const questionsContainer = document.querySelector(".questions");
 
 /* Name */
@@ -24,7 +24,7 @@ let almostDone = 30;
 const originalTime = timeInSeconds;
 
 timer();
-// let x = setInterval(timer, 1000);
+let x = setInterval(timer, 1000);
 
 function timer() {
   if (timeInSeconds < 0) {
@@ -37,7 +37,10 @@ function timer() {
     const audio = new Audio("../../public/tickingClock.mp3");
     audio.pause();
     audio.play();
-    timeElem.style.setProperty("--color-brand", "var(--color-error)");
+
+    timeElems.forEach((e) => {
+      e.style.setProperty("--color-brand", "var(--color-error)");
+    });
   }
 
   let minutes = Math.floor(timeInSeconds / 60);
@@ -50,12 +53,14 @@ function timer() {
     seconds = `0${seconds}`;
   }
 
-  minutesClock.innerText = minutes;
-  secondsClock.innerText = seconds;
-  timeElem.style.setProperty(
-    "--angle",
-    `${(360 * timeInSeconds) / originalTime}deg`
-  );
+  minutesClock.forEach((e) => (e.innerText = minutes));
+  secondsClock.forEach((e) => (e.innerText = seconds));
+  timeElems.forEach((e) => {
+    e.style.setProperty(
+      "--angle",
+      `${(360 * timeInSeconds) / originalTime}deg`
+    );
+  });
 
   timeInSeconds -= 1;
 }
