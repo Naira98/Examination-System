@@ -61,7 +61,29 @@
       <!-- Main part -->
       <div class="flex flex-col">
         <!-- Logo -->
-        <div class="h-30">logo</div>
+        <div class="h-30 flex justify-between mt-6 max-md:mr-4">
+          <div>LOGO</div>
+
+          <!-- Timer -->
+          <div
+            class="timer relative self-center mb-5 lg:hidden!"
+            style="--angle: 360deg"
+          >
+            <div
+              class="absolute inset-0 flex items-center justify-center w-full gap-1"
+            >
+              <h3
+                id="minutes"
+                class="font-semibold text-2xl text-brand text-center"
+              ></h3>
+              <h3 class="font-semibold text-2xl text-brand">:</h3>
+              <h3
+                id="seconds"
+                class="seconds font-semibold text-2xl text-brand text-center"
+              ></h3>
+            </div>
+          </div>
+        </div>
 
         <!-- Question -->
         <div class="max-w-150 w-full items-stretch self-center pr-4">
