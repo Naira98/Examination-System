@@ -1,7 +1,7 @@
 const actionButtons = document.getElementById("actionButtons");
 const logoutBtn = document.getElementById("logout");
 const answers = localStorage.getItem("answers");
-const registeredUser = localStorage.getItem("registeredUser");
+// const registeredUser = localStorage.getItem("registeredUser");
 
 if (registeredUser && answers) {
   // User has completed an exam, show both buttons
