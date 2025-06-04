@@ -79,6 +79,6 @@ form.addEventListener("submit", async (e) => {
 
     localStorage.setItem("registeredUser", JSON.stringify(user));
 
-    window.location.replace("/src/pages/login.html");
+    window.location.replace("src/pages/login.html");
   }
 });
