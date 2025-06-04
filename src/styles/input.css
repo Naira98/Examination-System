@@ -2,6 +2,12 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* to remove the eye icon */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
 @theme {
   --color-brand: #bcdea5;
   --color-brand-light: #bcdea5;
@@ -17,6 +23,7 @@
 }
 
 @layer components;
+
 .form {
   @apply grid grid-cols-2 p-6 pb-10 border-1 rounded-2xl border-primary gap-3 bg-white shadow-xl min-w-[430px] min-h-[300px];
 }
@@ -24,12 +31,14 @@
 .title {
   @apply text-brand text-2xl text-center font-bold;
 }
+
 .input {
   @apply border-b-1 border-primary focus:outline-none focus:border-brand;
 }
 
 .inputError {
   @apply border-error;
+
   &:focus {
     @apply border-error;
   }
@@ -72,15 +81,14 @@
 }
 
 @layer utilities;
+
 .timer {
   --bar-width: 20px;
   --box-shadow: 2px 2px 2px rgba(0, 0, 0, 20%);
 
-  background-image: conic-gradient(
-    var(--color-brand) 0deg,
-    var(--color-brand) var(--angle),
-    var(--color-primary) var(--angle)
-  );
+  background-image: conic-gradient(var(--color-brand) 0deg,
+      var(--color-brand) var(--angle),
+      var(--color-primary) var(--angle));
 
   box-shadow: inset var(--box-shadow);
   transition: all;
@@ -92,7 +100,8 @@
 
   &::after {
     content: "";
-    background: #f3f4f6; /* gray-100 */
+    background: #f3f4f6;
+    /* gray-100 */
     box-shadow: var(--box-shadow);
     border-radius: 50%;
     width: calc(100% - var(--bar-width));
