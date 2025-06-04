@@ -34,7 +34,7 @@ function timer() {
   }
 
   if (timeInSeconds <= almostDone) {
-    const audio = new Audio("../../public/tickingClock.mp3");
+    const audio = new Audio("../../assets/tickingClock.mp3");
     audio.pause();
     audio.play();
 
