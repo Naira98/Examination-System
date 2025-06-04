@@ -27,42 +27,45 @@ async function run() {
     choosenAnswers.delete(currentQuestionIndex);
     removeActiveAnswer();
     enableDisableEraseBtn();
-    removeAnsweredQuestionSideBar(currentQuestionIndex)
+    removeAnsweredQuestionSideBar(currentQuestionIndex);
   });
 
   markBtn.addEventListener("click", () => {
     markedQuestions.add(currentQuestionIndex);
     enableDisableMarkBtn();
-    // showMarkedQuestions();
-    markedQuestionsContainer.innerHTML = "";
+    showMarkedQuestions();
+  });
+}
 
-    markedQuestions.forEach((questionIndex) => {
-      let div = document.createElement("div");
-      div.innerHTML = `
+run();
+
+function showMarkedQuestions() {
+  markedQuestionsContainer.innerHTML = "";
+
+  markedQuestions.forEach((questionIndex) => {
+    let div = document.createElement("div");
+    div.innerHTML = `
         <div id="q${questionIndex}" class="markedQuestion">
           <span>Question ${questionIndex + 1}</span>
           <span class="trashIcon"> <i class="fa-solid fa-trash"></i> </span>
         </div>
       `;
 
-      div.addEventListener("click", () => {
-        currentQuestionIndex = questionIndex;
-        renderNewQuestion(questions);
-      });
-
-      markedQuestionsContainer.append(div);
-
-      document
-        .querySelector(`#q${questionIndex} > .trashIcon`)
-        .addEventListener("click", (e) => {
-          e.stopPropagation();
-          deleteMarkedQuestion(questionIndex);
-        });
+    div.addEventListener("click", () => {
+      currentQuestionIndex = questionIndex;
+      renderNewQuestion(questions);
     });
+
+    markedQuestionsContainer.append(div);
+
+    document
+      .querySelector(`#q${questionIndex} > .trashIcon`)
+      .addEventListener("click", (e) => {
+        e.stopPropagation();
+        deleteMarkedQuestion(questionIndex);
+      });
   });
 }
-
-run();
 
 function deleteMarkedQuestion(questionIndex) {
   markedQuestions.delete(questionIndex);
