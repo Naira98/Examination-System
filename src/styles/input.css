@@ -64,11 +64,11 @@
 }
 
 .sideBarQuestion {
-  @apply flex items-center gap-2 text-gray-700 px-2 py-1 rounded-lg transition hover:bg-gray-300 cursor-pointer;
+  @apply flex items-center gap-2 text-gray-700 lg:px-2 lg:py-1 rounded-lg transition lg:hover:bg-gray-300 cursor-pointer;
 }
 
 .activeSideBarQuestion {
-  @apply bg-gray-300;
+  @apply lg:bg-gray-300;
 }
 
 @layer utilities;
@@ -111,6 +111,10 @@
   border-radius: 50%;
   border: 1px solid #99a1af;
   padding: 3px;
+}
+
+.activeSideBarQuestion > .circle {
+  border: 3px solid #99a1af;
 }
 
 .answered {

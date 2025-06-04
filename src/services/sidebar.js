@@ -64,24 +64,23 @@ function timer() {
 async function run() {
   const questions = await questionsPromise;
 
-  for (let i = 0; i < 2; i++)
-    questions.forEach((_, i) => {
-      const div = document.createElement("div");
-      div.classList.add("sideBarQuestion");
-      div.innerHTML = `
+  questions.forEach((_, i) => {
+    const div = document.createElement("div");
+    div.classList.add("sideBarQuestion");
+    div.innerHTML = `
     <div class="circle">
       <div class="answerIndicator"></div>
     </div>
     <div class="max-lg:hidden">Question ${i + 1} </div>
     `;
 
-      div.addEventListener("click", () => {
-        currentQuestionIndex = i;
-        renderNewQuestion(questions);
-      });
-
-      questionsContainer.append(div);
+    div.addEventListener("click", () => {
+      currentQuestionIndex = i;
+      renderNewQuestion(questions);
     });
+
+    questionsContainer.append(div);
+  });
   updateActiveQuestionSideBar();
 }
 run();

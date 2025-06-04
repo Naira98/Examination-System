@@ -17,9 +17,11 @@
     >
       <!-- Sidebar -->
       <div
-        class="border-r-1 max-md:row-span-2 bg-gray-100 border-gray-200 shadow-lg flex flex-col"
+        class="border-r-1 max-md:row-span-2 bg-gray-100 border-gray-200 shadow-lg"
       >
-        <div class="sticky top-0 h-screen p-4 flex flex-col">
+        <div
+          class="sticky top-0 h-screen p-4 flex flex-col max-lg:items-center max-lg:justify-center"
+        >
           <!-- Name -->
           <div class="username flex items-center mb-3"></div>
 
@@ -44,10 +46,15 @@
           </div>
 
           <!-- Questions -->
-          <div class="questions space-y-3 overflow-scroll flex-1">
+          <div class="questions space-y-3 overflow-scroll flex-1 -mx-4 px-4">
             <div class="text-sm text-gray-500 max-lg:hidden">Questions</div>
           </div>
-          <div class="mt-4">LOGOUT</div>
+
+          <!-- Logout -->
+          <div class="mt-4 text-gray-500 gap-2 flex">
+            <i class="fa-solid fa-arrow-right-from-bracket sideBarQuestion"></i>
+            <span class="max-lg:hidden">Logout</span>
+          </div>
         </div>
       </div>
 
@@ -57,7 +64,7 @@
         <div class="h-30">logo</div>
 
         <!-- Question -->
-        <div class="max-w-150 w-full items-stretch self-center">
+        <div class="max-w-150 w-full items-stretch self-center pr-4">
           <div class="mb-6">
             <span
               class="questionNo text-brand font-extrabold text-2xl mr-2"
