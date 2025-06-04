@@ -48,7 +48,7 @@
 }
 
 .answer {
-  @apply w-[70%] border-1 border-brand rounded-4xl px-5 py-3 cursor-pointer transition transform hover:translate-x-2 hover:bg-brand;
+  @apply w-full border-1 border-brand rounded-4xl px-5 py-4 cursor-pointer transition transform hover:translate-x-2 hover:bg-brand;
 }
 
 .activeAnswer {
@@ -56,7 +56,7 @@
 }
 
 .markedQuestion {
-  @apply p-3.5 border-1 border-brand rounded-lg cursor-pointer flex justify-between items-center;
+  @apply px-3.5 py-1.5 border-1 border-brand rounded-lg cursor-pointer flex justify-between items-center;
 }
 
 .trashIcon {

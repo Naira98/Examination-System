@@ -24,7 +24,7 @@ let almostDone = 30;
 const originalTime = timeInSeconds;
 
 timer();
-// let x = setInterval(timer, 100);
+let x = setInterval(timer, 1000);
 
 function timer() {
   if (timeInSeconds < 0) {
@@ -34,6 +34,9 @@ function timer() {
   }
 
   if (timeInSeconds <= almostDone) {
+    const audio = new Audio("../../public/tickingClock.mp3");
+    audio.pause();
+    audio.play();
     timeElem.style.setProperty("--color-brand", "var(--color-error)");
   }
 
