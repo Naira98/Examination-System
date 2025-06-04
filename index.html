@@ -14,9 +14,10 @@
       );
 
       if (rememberMe && registeredUser.firstName) {
-        window.location.href = "src/pages/register.html";
-      } else {
         window.location.href = "src/pages/homePage.html";
+      } else {
+        localStorage.clear()
+        window.location.href = "src/pages/register.html";
       }
     </script>
   </body>
