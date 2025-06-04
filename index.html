@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <script>
+      const rememberMe = localStorage.getItem("rememberMe");
+
+      const registeredUser = JSON.parse(
+        localStorage.getItem("registeredUser") ?? "null"
+      );
+
+      if (rememberMe && registeredUser.firstName) {
+        window.location.replace("/src/pages/register.html");
+      } else {
+        window.location.replace("/src/pages/homePage.html");
+      }
+    </script>
+  </body>
 </html>

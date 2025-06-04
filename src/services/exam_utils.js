@@ -84,25 +84,20 @@ function getAnswers(questions) {
       question: question.question,
       selectedAnswer: selectedAnswer ? selectedAnswer.text : null,
       isCorrect: selectedAnswer ? selectedAnswer.isCorrect : false,
-      correctAnswer: question.answers.find((a) => a.isCorrect)?.text || null,
+      correctAnswer: question.answers.find((a) => a.isCorrect).text,
     });
   });
 
   return answers;
 }
-submitExamBtn = document.getElementById("submit");
-submitExamBtn.addEventListener("click", async (e) => {
-  console.log("Submit button clicked");
-  e.preventDefault();
 
-  const questions = await questionsPromise;
+function markExam(examStatus) {
   const answers = getAnswers(questions);
 
   // Calculate exam summary
   const totalQuestions = questions.length;
   const answeredQuestions = Array.from(choosenAnswers.keys()).length;
   const markedQuestionsCount = markedQuestions.size;
-  const examStatus = "Submitted";
 
   // Save full answers for review
   localStorage.setItem("answers", JSON.stringify(answers));
@@ -116,10 +111,7 @@ submitExamBtn.addEventListener("click", async (e) => {
   };
 
   localStorage.setItem("examSummary", JSON.stringify(examSummary));
-
-  // Redirect to endExam.html
-  window.location.href = "./endExam.html";
-});
+}
 
 function capitalizeFirstLetter(val) {
   return String(val).charAt(0).toUpperCase() + String(val).slice(1);
