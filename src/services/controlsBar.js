@@ -5,6 +5,7 @@ const nextBtn = document.querySelector("#next");
 const eraseBtn = document.querySelector("#eraseAnswer");
 const markBtn = document.querySelector("#markQuestion");
 const markedQuestionsContainer = document.querySelector("#markedQuestions");
+const submitBtn = document.getElementById("submit");
 
 async function run() {
   const questions = await questionsPromise;
@@ -34,6 +35,13 @@ async function run() {
     markedQuestions.add(currentQuestionIndex);
     enableDisableMarkBtn();
     showMarkedQuestions();
+  });
+
+  submitBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    markExam("Submitted");
+
+    window.location.href = "./endExam.html";
   });
 }
 

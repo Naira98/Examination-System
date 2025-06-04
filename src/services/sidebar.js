@@ -29,6 +29,7 @@ let x = setInterval(timer, 1000);
 function timer() {
   if (timeInSeconds < 0) {
     clearInterval(x);
+    markExam("Submitted");
     window.location.href = "./timeOut.html";
     return;
   }

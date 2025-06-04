@@ -21,22 +21,22 @@
     ]
   },
   {
-    "question": "Which HTML tag is used to create a hyperlink?",
+    "question": "Which CSS property is used to change the text color of an element?",
     "answers": [
       {
-        "text": "<link>",
+        "text": "font-color",
         "isCorrect": false
       },
       {
-        "text": "<a>",
+        "text": "text-style",
+        "isCorrect": false
+      },
+      {
+        "text": "color",
         "isCorrect": true
       },
       {
-        "text": "<href>",
-        "isCorrect": false
-      },
-      {
-        "text": "<url>",
+        "text": "text-color",
         "isCorrect": false
       }
     ]
