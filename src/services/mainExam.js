@@ -2,6 +2,9 @@ const question = document.querySelector(".question");
 const questionNo = document.querySelector(".questionNo");
 const choices = document.querySelector(".choices");
 
+localStorage.removeItem("answers");
+localStorage.removeItem("examSummary");
+
 let currentQuestionIndex = 0;
 const choosenAnswers = new Map();
 const markedQuestions = new Set();

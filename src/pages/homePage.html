@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ExamiHub</title>
+    <title>examihub</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="/src/styles/output.css" />
+    <link rel="stylesheet" href="../styles/output.css" />
   </head>
 
   <body class="bg-background">
@@ -17,24 +17,15 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex">
-            <div class="flex-shrink-0 flex items-center">
-              <img
-                class="h-8 w-auto"
-                src="/public/logo.svg"
-                alt="ExamiHub Logo"
-              />
-              <span class="ml-2 text-xl font-bold text-[#6a7282]"
-                >ExamiHub</span
-              >
-            </div>
+            <div class="flex-shrink-0 flex items-center">LOGO</div>
           </div>
           <div class="flex items-center">
             <a
-              href="/src/pages/login.html"
-              id="loginBtn"
+              href="../pages/register.html"
+              id="logoutBtn"
               class="text-[#99a1af] hover:text-[#6a7282] px-3 py-2 rounded-md text-sm font-medium"
             >
-              <i class="fa-solid fa-right-to-bracket mr-1"></i> Login
+              <i class="fa-solid fa-arrow-right-from-bracket mr-1"></i> Logout
             </a>
           </div>
         </div>
@@ -58,13 +49,7 @@
 
         <!-- Action Buttons -->
         <div class="mt-10 flex justify-center gap-6" id="actionButtons">
-          <a
-            href="/src/pages/exam.html"
-            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#bcdea5] hover:bg-[#a5c78e] transition"
-          >
-            <i class="fa-solid fa-pen-to-square mr-2"></i>
-            Start Exam
-          </a>
+         
         </div>
 
         <!-- Features Section -->
@@ -110,45 +95,12 @@
     <footer class="bg-background mt-20">
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <p class="text-center text-[#99a1af] text-sm">
-          © 2024 ExamiHub. All rights reserved.
+          © 2025 examihub. All rights reserved.
         </p>
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const actionButtons = document.getElementById("actionButtons");
-        const loginBtn = document.getElementById("loginBtn");
-        const answers = localStorage.getItem("answers");
-        const registeredUser = localStorage.getItem("registeredUser");
-
-        if (registeredUser && answers) {
-          // User has completed an exam, show both buttons
-          actionButtons.innerHTML = `
-                    <a href="/src/pages/exam.html"
-                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#bcdea5] hover:bg-[#a5c78e] transition">
-                        <i class="fa-solid fa-pen-to-square mr-2"></i>
-                        Start Exam
-                    </a>
-                    <a href="/src/pages/examResult.html"
-                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-[#6a7282] bg-[#f8faf7] hover:bg-[#e8eae7] transition">
-                        <i class="fa-solid fa-chart-line mr-2"></i>
-                        View Results
-                    </a>
-                `;
-          loginBtn.style.display = "none";
-        } else if (registeredUser) {
-          // User is logged in but hasn't taken an exam
-          loginBtn.style.display = "none";
-        } else {
-          // User is not logged in
-          const examButton = actionButtons.querySelector("a");
-          examButton.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location.href = "/src/pages/login.html";
-          });
-        }
-      });
-    </script>
+    <script src="../services/homePage.js"></script>
+    <script src="../services/logout.js"></script>
   </body>
 </html>

@@ -108,10 +108,14 @@ submitExamBtn.addEventListener("click", async (e) => {
   localStorage.setItem("answers", JSON.stringify(answers));
 
   // Save summary data for endExam.html
-  localStorage.setItem("totalQuestions", totalQuestions);
-  localStorage.setItem("answeredQuestions", answeredQuestions);
-  localStorage.setItem("markedQuestionsCount", markedQuestionsCount);
-  localStorage.setItem("examStatus", examStatus);
+  const examSummary = {
+    totalQuestions,
+    answeredQuestions,
+    markedQuestionsCount,
+    examStatus,
+  };
+
+  localStorage.setItem("examSummary", JSON.stringify(examSummary));
 
   // Redirect to endExam.html
   window.location.href = "./endExam.html";

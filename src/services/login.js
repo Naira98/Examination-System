@@ -28,6 +28,7 @@ form.addEventListener("submit", async (e) => {
       } else {
         localStorage.removeItem("rememberMe");
       }
+      localStorage.setItem("isLoggedIn", true);
 
       window.location.replace("homePage.html");
     } else {
