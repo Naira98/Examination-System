@@ -65,15 +65,19 @@
     <script>
       //  dynamic stats if stored in localStorage
       document.addEventListener("DOMContentLoaded", () => {
-        const total = localStorage.getItem("totalQuestions") || 10;
-        const answered = localStorage.getItem("answeredQuestions") || 0;
-        const marked = localStorage.getItem("markedQuestionsCount") || 0;
-        const status = localStorage.getItem("examStatus") || "Submitted";
+        const {
+          totalQuestions,
+          answeredQuestions,
+          markedQuestionsCount,
+          examStatus,
+        } = JSON.parse(localStorage.getItem("examSummary"));
 
-        document.getElementById("totalQuestions").innerText = total;
-        document.getElementById("answeredQuestions").innerText = answered;
-        document.getElementById("markedQuestionsCount").innerText = marked;
-        document.getElementById("examStatus").innerText = status;
+        document.getElementById("totalQuestions").innerText = totalQuestions;
+        document.getElementById("answeredQuestions").innerText =
+          answeredQuestions;
+        document.getElementById("markedQuestionsCount").innerText =
+          markedQuestionsCount;
+        document.getElementById("examStatus").innerText = examStatus;
       });
     </script>
   </body>
