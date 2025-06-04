@@ -22,10 +22,11 @@
         <div class="loader"></div>
       </div>
 
-      <!-- <i
-        class="fa-solid fa-hourglass-end text-red-500 text-5xl mb-4 animate-pulse"
-      ></i> -->
+
       <h1 class="text-3xl font-bold text-red-600 mb-4">Time's Up!</h1>
+      <!-- Add this inside your main container (below the loader or h1 maybe) -->
+      <h2 id="userName" class="text-xl font-semibold text-gray-800 mb-2"></h2>
+
       <p class="text-gray-600 mb-6">
         Your exam time has ended. Please submit or review your answers if
         needed.
@@ -47,5 +48,13 @@
         </button>
       </div>
     </div>
+    <script>
+      const user = JSON.parse(localStorage.getItem("registeredUser"));
+      if (user && user.firstName) {
+        const userNameHeading = document.getElementById("userName");
+        userNameHeading.textContent = `Hello, ${user.firstName}`;
+      }
+    </script>
   </body>
+  §
 </html>
