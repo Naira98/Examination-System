@@ -5,7 +5,6 @@ const timeElems = document.querySelectorAll(".timer");
 const questionsContainer = document.querySelector(".questions");
 
 /* Name */
-const registeredUser = JSON.parse(localStorage.getItem("registeredUser"));
 
 username.innerHTML = `
   <div class="bg-gray-300 text-gray-700 rounded-md text-center mr-2 flex justify-center items-center w-7 h-7">
