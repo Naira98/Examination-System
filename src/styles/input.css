@@ -9,7 +9,21 @@ input::-ms-clear {
 }
 
 @theme {
-  --color-brand: #bcdea5;
+  --color-brand: #a5c78e;
+  --color-brand-light: #b5d39e;
+  --color-brand-dark: #95b77e;
+
+  /* Secondary Colors */
+  --color-primary: #99a1af;
+  --color-secondary: #6a7282;
+
+  /* System Colors */
+  --color-error: #fc0000;
+  --color-text: #000000;
+  --color-background: #f8faf7;
+}
+
+/* --color-brand: #bcdea5;
   --color-brand-light: #bcdea5;
   --color-brand-dark: #bcdea5;
 
@@ -20,7 +34,7 @@ input::-ms-clear {
 
   --color-text: #000000;
   --color-background: #f8faf7;
-}
+} */
 
 @layer components;
 
@@ -175,7 +189,7 @@ input::-ms-clear {
   padding: 3px;
 }
 
-.activeSideBarQuestion > .circle {
+.activeSideBarQuestion>.circle {
   border: 3px solid #99a1af;
 }
 
