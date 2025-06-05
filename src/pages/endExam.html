@@ -13,69 +13,88 @@
     <script src="../services/ensureLoggedIn.js"></script>
   </head>
 
-  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <nav class="bg-white shadow-md absolute top-0 w-full">
-      <div class="px-4 sm:px-6 lg:px-8">
+  <body>
+    <nav class="bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
               <img class="max-w-50" src="../../assets/logo_name.webp" />
             </div>
           </div>
+          <div class="flex items-center">
+            <a
+              href="../pages/register.html"
+              id="logoutBtn"
+              class="text-[#99a1af] hover:text-[#6a7282] px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <i class="fa-solid fa-arrow-right-from-bracket mr-1"></i> Logout
+            </a>
+          </div>
         </div>
       </div>
     </nav>
-    <div
-      class="bg-white shadow-xl rounded-xl p-8 max-w-xl w-full text-center space-y-6"
-    >
-      <div>
-        <h1 class="text-3xl font-bold text-gray-800">
-          <i class="fa-solid fa-user-graduate text-5xl text-teal-600 mb-3"></i>
-          Exam Has Ended Successfully
-        </h1>
-        <h2 id="userName" class="text-xl font-semibold text-gray-800 mb-2"></h2>
-
-        <p class="text-gray-500 text-sm mt-1">
-          Here's a quick summary of your exam.
-        </p>
-      </div>
-
-      <!-- Exam Summary -->
+    <div class="bg-gray-100 min-h-screen flex items-center justify-center">
       <div
-        class="grid grid-cols-2 gap-4 text-left bg-gray-50 rounded-lg p-4 text-gray-700"
+        class="bg-white shadow-xl rounded-xl p-8 max-w-xl w-full text-center space-y-6"
       >
         <div>
-          <strong>Status:</strong> <span id="examStatus">Submitted</span>
-        </div>
-        <div>
-          <strong>Total Questions:</strong> <span id="totalQuestions">10</span>
-        </div>
-        <div>
-          <strong>Answered:</strong> <span id="answeredQuestions">8</span>
-        </div>
-        <div>
-          <strong>Marked for Review:</strong>
-          <span id="markedQuestionsCount">2</span>
-        </div>
-      </div>
+          <h1 class="text-3xl font-bold text-gray-800">
+            <i
+              class="fa-solid fa-user-graduate text-5xl text-teal-600 mb-3"
+            ></i>
+            Exam Has Ended Successfully
+          </h1>
+          <h2
+            id="userName"
+            class="text-xl font-semibold text-gray-800 mb-2"
+          ></h2>
 
-      <!-- Action Buttons -->
-      <div class="flex flex-col gap-3">
-        <button
-          onclick="window.location.href='./examResult.html'"
-          class="bg-green-200 text-green-800 px-4 py-2 rounded-lg hover:bg-green-300 transition"
-        >
-          <i class="fa-solid fa-file-lines mr-2"></i>View Exam Summary
-        </button>
+          <p class="text-gray-500 text-sm mt-1">
+            Here's a quick summary of your exam.
+          </p>
+        </div>
 
-        <button
-          onclick="window.location.href='homePage.html'"
-          class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition"
+        <!-- Exam Summary -->
+        <div
+          class="grid grid-cols-2 gap-4 text-left bg-gray-50 rounded-lg p-4 text-gray-700"
         >
-          <i class="fa-solid fa-house mr-2"></i>Go to Home
-        </button>
+          <div>
+            <strong>Status:</strong> <span id="examStatus">Submitted</span>
+          </div>
+          <div>
+            <strong>Total Questions:</strong>
+            <span id="totalQuestions">10</span>
+          </div>
+          <div>
+            <strong>Answered:</strong> <span id="answeredQuestions">8</span>
+          </div>
+          <div>
+            <strong>Marked for Review:</strong>
+            <span id="markedQuestionsCount">2</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col gap-3">
+          <button
+            onclick="window.location.href='./examResult.html'"
+            class="bg-green-200 text-green-800 px-4 py-2 rounded-lg hover:bg-green-300 transition"
+          >
+            <i class="fa-solid fa-file-lines mr-2"></i>View Exam Summary
+          </button>
+
+          <button
+            onclick="window.location.href='homePage.html'"
+            class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition"
+          >
+            <i class="fa-solid fa-house mr-2"></i>Go to Home
+          </button>
+        </div>
       </div>
     </div>
+
+    <script src="../services/logout.js"></script>
 
     <script>
       const user = JSON.parse(localStorage.getItem("registeredUser"));

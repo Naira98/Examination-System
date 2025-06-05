@@ -1,107 +1,92 @@
 [
   {
-    "question": "What is JavaScript?",
+    "question": "Which HTML tag is used to create a hyperlink?",
     "answers": [
-      {
-        "text": "A programming language for creating interactive web pages",
-        "isCorrect": true
-      },
-      {
-        "text": "A markup language for structuring web content",
-        "isCorrect": false
-      },
-      {
-        "text": "A styling language for designing web pages",
-        "isCorrect": false
-      },
-      {
-        "text": "A database management system",
-        "isCorrect": false
-      }
+      { "text": "a", "isCorrect": true },
+      { "text": "link", "isCorrect": false },
+      { "text": "href", "isCorrect": false },
+      { "text": "hyperlink", "isCorrect": false }
     ]
   },
   {
-    "question": "Which CSS property is used to change the text color of an element?",
+    "question": "Which JavaScript keyword is used to declare a constant?",
     "answers": [
-      {
-        "text": "font-color",
-        "isCorrect": false
-      },
-      {
-        "text": "text-style",
-        "isCorrect": false
-      },
-      {
-        "text": "color",
-        "isCorrect": true
-      },
-      {
-        "text": "text-color",
-        "isCorrect": false
-      }
+      { "text": "let", "isCorrect": false },
+      { "text": "var", "isCorrect": false },
+      { "text": "constant", "isCorrect": false },
+      { "text": "const", "isCorrect": true }
     ]
   },
   {
-    "question": "What does CSS stand for?",
+    "question": "Which HTML element is used to define an unordered list?",
     "answers": [
-      {
-        "text": "Computer Style Sheets",
-        "isCorrect": false
-      },
-      {
-        "text": "Creative Style System",
-        "isCorrect": false
-      },
-      {
-        "text": "Cascading Style Sheets",
-        "isCorrect": true
-      },
-      {
-        "text": "Colorful Style Sheets",
-        "isCorrect": false
-      }
+      { "text": "ul", "isCorrect": true },
+      { "text": "ol", "isCorrect": false },
+      { "text": "li", "isCorrect": false },
+      { "text": "list", "isCorrect": false }
     ]
   },
   {
-    "question": "Which method is used to add an element at the end of an array in JavaScript?",
+    "question": "Which CSS property controls the size of text?",
     "answers": [
-      {
-        "text": "push()",
-        "isCorrect": true
-      },
-      {
-        "text": "unshift()",
-        "isCorrect": false
-      },
-      {
-        "text": "append()",
-        "isCorrect": false
-      },
-      {
-        "text": "add()",
-        "isCorrect": false
-      }
+      { "text": "font-size", "isCorrect": true },
+      { "text": "text-size", "isCorrect": false },
+      { "text": "size", "isCorrect": false },
+      { "text": "font-style", "isCorrect": false }
     ]
   },
   {
-    "question": "What is the correct way to write a comment in JavaScript?",
+    "question": "What does the typeof operator return in JavaScript?",
     "answers": [
-      {
-        "text": "<!-- This is a comment -->",
-        "isCorrect": false
-      },
-      {
-        "text": "/* This is a comment */",
-        "isCorrect": true
-      },
-      {
-        "text": "# This is a comment",
-        "isCorrect": false
-      },
-      {
-        "text": "// This is a comment",
-        "isCorrect": true
-      }
+      { "text": "The data type of a variable", "isCorrect": true },
+      { "text": "The value of a variable", "isCorrect": false },
+      { "text": "The memory address", "isCorrect": false },
+      { "text": "The scope of the variable", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which array method adds an element to the end of an array?",
+    "answers": [
+      { "text": "push", "isCorrect": true },
+      { "text": "pop", "isCorrect": false },
+      { "text": "shift", "isCorrect": false },
+      { "text": "unshift", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which keyword is used to define a class in JavaScript?",
+    "answers": [
+      { "text": "class", "isCorrect": true },
+      { "text": "constructor", "isCorrect": false },
+      { "text": "object", "isCorrect": false },
+      { "text": "define", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which CSS property sets the background color of an element?",
+    "answers": [
+      { "text": "background-color", "isCorrect": true },
+      { "text": "color", "isCorrect": false },
+      { "text": "bg-color", "isCorrect": false },
+      { "text": "background", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which method is used to convert a JSON string into an object in JavaScript?",
+    "answers": [
+      { "text": "JSON.parse", "isCorrect": true },
+      { "text": "JSON.stringify", "isCorrect": false },
+      { "text": "JSON.toObject", "isCorrect": false },
+      { "text": "JSON.convert", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which HTML element is used to insert a line break?",
+    "answers": [
+      { "text": "br", "isCorrect": true },
+      { "text": "break", "isCorrect": false },
+      { "text": "lb", "isCorrect": false },
+      { "text": "line", "isCorrect": false }
     ]
   }
 ]
