@@ -26,7 +26,7 @@ input::-ms-clear {
 @layer components;
 
 .form {
-  @apply grid grid-cols-2 p-6 pb-10 border-1 rounded-2xl border-primary gap-3 bg-white shadow-xl min-w-[430px] min-h-[300px];
+  @apply grid grid-cols-2 p-6 pb-10 border-1 rounded-2xl border-primary gap-3 bg-white shadow-xl max-w-[430px] min-h-[300px] max-sm:m-1;
 }
 
 .title {
@@ -34,7 +34,7 @@ input::-ms-clear {
 }
 
 .input {
-  @apply border-b-1 border-primary focus:outline-none focus:border-brand;
+  @apply border-b-1 border-primary focus:outline-none focus:border-brand overflow-hidden;
 }
 
 .inputError {

@@ -73,7 +73,6 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-4xl: 2rem;
-    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -254,6 +253,24 @@
   .row-span-2 {
     grid-row: span 2 / span 2;
   }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
@@ -332,9 +349,6 @@
   .inline-flex {
     display: inline-flex;
   }
-  .table {
-    display: table;
-  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -346,9 +360,6 @@
   }
   .h-16 {
     height: calc(var(--spacing) * 16);
-  }
-  .h-30 {
-    height: calc(var(--spacing) * 30);
   }
   .h-screen {
     height: 100vh;
@@ -401,29 +412,14 @@
   .flex-1 {
     flex: 1;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
   .shrink-0 {
     flex-shrink: 0;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .transform {
-    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .animate-pulse {
-    animation: var(--animate-pulse);
-  }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -586,9 +582,6 @@
   .bg-primary {
     background-color: var(--color-primary);
   }
-  .bg-red-200 {
-    background-color: var(--color-red-200);
-  }
   .bg-red-200\/60 {
     background-color: color-mix(in srgb, oklch(88.5% 0.062 18.334) 60%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -600,9 +593,6 @@
   }
   .bg-white {
     background-color: var(--color-white);
-  }
-  .bg-yellow-200 {
-    background-color: var(--color-yellow-200);
   }
   .bg-yellow-200\/60 {
     background-color: color-mix(in srgb, oklch(94.5% 0.129 101.54) 60%, transparent);
@@ -630,9 +620,6 @@
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
   }
   .px-2\.5 {
     padding-inline: calc(var(--spacing) * 2.5);
@@ -795,9 +782,6 @@
     --tw-numeric-spacing: tabular-nums;
     font-variant-numeric: var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .accent-brand {
     accent-color: var(--color-brand);
   }
@@ -813,15 +797,8 @@
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .blur {
     --tw-blur: blur(8px);
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .transition {
@@ -957,6 +934,11 @@
   .max-md\:grid-cols-\[64px_1fr\] {
     @media (width < 48rem) {
       grid-template-columns: 64px 1fr;
+    }
+  }
+  .max-sm\:w-\[150px\] {
+    @media (width < 40rem) {
+      width: 150px;
     }
   }
   .sm\:flex-row {
@@ -1101,7 +1083,7 @@ input::-ms-reveal, input::-ms-clear {
 .form {
   display: grid;
   min-height: 300px;
-  min-width: 430px;
+  max-width: 430px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: calc(var(--spacing) * 3);
   border-radius: var(--radius-2xl);
@@ -1113,6 +1095,9 @@ input::-ms-reveal, input::-ms-clear {
   padding-bottom: calc(var(--spacing) * 10);
   --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  @media (width < 40rem) {
+    margin: calc(var(--spacing) * 1);
+  }
 }
 .title {
   text-align: center;
@@ -1123,6 +1108,7 @@ input::-ms-reveal, input::-ms-clear {
   color: var(--color-brand);
 }
 .input {
+  overflow: hidden;
   border-bottom-style: var(--tw-border-style);
   border-bottom-width: 1px;
   border-color: var(--color-primary);
@@ -1302,7 +1288,7 @@ input::-ms-reveal, input::-ms-clear {
   border-radius: 20px 20px 0 0;
   inset: -20px calc(50% - 10px);
   transform: rotate(40deg);
-  background: linear-gradient(currentColor 0 0) top /100% 10px, linear-gradient(currentColor 0 0) bottom/3px 10px;
+  background: linear-gradient(currentColor 0 0) top / 100% 10px, linear-gradient(currentColor 0 0) bottom/3px 10px;
   background-repeat: no-repeat;
 }
 .loader::after {
@@ -1322,7 +1308,7 @@ input::-ms-reveal, input::-ms-clear {
 .timer {
   --bar-width: 20px;
   --box-shadow: 2px 2px 2px rgba(0, 0, 0, 20%);
-  background-image: conic-gradient(var(--color-brand) 0deg, var(--color-brand) var(--angle), var(--color-primary) var(--angle));
+  background-image: conic-gradient( var(--color-brand) 0deg, var(--color-brand) var(--angle), var(--color-primary) var(--angle) );
   box-shadow: inset var(--box-shadow);
   transition: all;
   width: 120px;
@@ -1349,33 +1335,13 @@ input::-ms-reveal, input::-ms-clear {
   border: 1px solid #99a1af;
   padding: 3px;
 }
-.activeSideBarQuestion>.circle {
+.activeSideBarQuestion > .circle {
   border: 3px solid #99a1af;
 }
 .answered {
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: var(--color-brand);
-}
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
 }
 @property --tw-space-y-reverse {
   syntax: "*";
@@ -1485,11 +1451,6 @@ input::-ms-reveal, input::-ms-clear {
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -1547,6 +1508,26 @@ input::-ms-reveal, input::-ms-clear {
   syntax: "*";
   inherits: false;
 }
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -1562,19 +1543,9 @@ input::-ms-reveal, input::-ms-clear {
   inherits: false;
   initial-value: 0;
 }
-@keyframes pulse {
-  50% {
-    opacity: 0.5;
-  }
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
@@ -1599,7 +1570,6 @@ input::-ms-reveal, input::-ms-clear {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -1614,6 +1584,11 @@ input::-ms-reveal, input::-ms-clear {
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
       --tw-duration: initial;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
